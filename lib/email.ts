@@ -1,46 +1,85 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import type { ContactFormData } from "./schemas";
 import { SITE_NAME, SITE_TAGLINE } from "./constants";
 import { escapeHtml } from "./html-escape";
 
-function getResend() {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) return null;
-  return new Resend(key);
+/** Common providers when the login is a normal email address. */
+const SMTP_HOST_BY_DOMAIN: Record<string, string> = {
+  "gmail.com": "smtp.gmail.com",
+  "googlemail.com": "smtp.gmail.com",
+  "outlook.com": "smtp-mail.outlook.com",
+  "hotmail.com": "smtp-mail.outlook.com",
+  "live.com": "smtp-mail.outlook.com",
+  "yahoo.com": "smtp.mail.yahoo.com",
+  "yahoo.co.uk": "smtp.mail.yahoo.com",
+};
+
+function resolveSmtpHost(user: string): string | null {
+  const override = process.env.SMTP_HOST?.trim();
+  if (override) {
+    return override;
+  }
+
+  const at = user.indexOf("@");
+  if (at === -1) {
+    return null;
+  }
+
+  const domain = user.slice(at + 1).toLowerCase();
+  return SMTP_HOST_BY_DOMAIN[domain] ?? `smtp.${domain}`;
 }
 
-function adminFromAddress(): string {
+function getSmtpTransport() {
+  const user = process.env.SMTP_USER?.trim();
+  const pass = process.env.SMTP_PASS?.trim();
+  if (!user || !pass) {
+    return null;
+  }
+
+  const host = resolveSmtpHost(user);
+  if (!host) {
+    return null;
+  }
+
+  const port = Number(process.env.SMTP_PORT ?? "587") || 587;
+  const secure =
+    process.env.SMTP_SECURE === "true" ||
+    process.env.SMTP_SECURE === "1" ||
+    port === 465;
+
+  return nodemailer.createTransport({
+    host,
+    port,
+    secure,
+    auth: { user, pass },
+  });
+}
+
+function fromAddress(): string {
+  const user = process.env.SMTP_USER?.trim();
+  return user ? `${SITE_NAME} <${user}>` : `${SITE_NAME} <noreply@localhost>`;
+}
+
+/** Inbox for new inquiries — same account as SMTP_USER if CONTACT_EMAIL is unset. */
+function inquiryInbox(): string {
   return (
-    process.env.RESEND_FROM ??
-    "Aristotle Ascent <onboarding@resend.dev>"
+    process.env.CONTACT_EMAIL?.trim() ??
+    process.env.SMTP_USER?.trim() ??
+    "contact@aristotleascent.com"
   );
-}
-
-function autoReplyFromAddress(): string {
-  return process.env.RESEND_AUTO_REPLY_FROM ?? adminFromAddress();
-}
-
-function parseBccList(): string[] | undefined {
-  const raw = process.env.INQUIRY_BCC_EMAILS?.trim();
-  if (!raw) return undefined;
-  const list = raw
-    .split(/[,;]/)
-    .map((e) => e.trim())
-    .filter(Boolean);
-  return list.length ? list : undefined;
 }
 
 export async function sendContactNotification(
   data: ContactFormData
 ): Promise<{ success: boolean; error?: string }> {
-  const resend = getResend();
-  if (!resend) {
-    return { success: false, error: "Email is not configured" };
+  const transporter = getSmtpTransport();
+  if (!transporter) {
+    return {
+      success: false,
+      error:
+        "Email is not configured. Set SMTP_USER (full email) and SMTP_PASS. If your host is not smtp.<your-domain>, set SMTP_HOST.",
+    };
   }
-
-  const contactEmail =
-    process.env.CONTACT_EMAIL ?? "contact@aristotleascent.com";
-  const bcc = parseBccList();
 
   const safe = {
     name: escapeHtml(data.name),
@@ -51,10 +90,9 @@ export async function sendContactNotification(
   };
 
   try {
-    await resend.emails.send({
-      from: adminFromAddress(),
-      to: contactEmail,
-      ...(bcc ? { bcc } : {}),
+    await transporter.sendMail({
+      from: fromAddress(),
+      to: inquiryInbox(),
       replyTo: data.email,
       subject: `New Inquiry: ${data.name} — ${data.programInterest}`,
       html: `
@@ -94,10 +132,6 @@ export async function sendContactNotification(
   }
 }
 
-/**
- * Optional confirmation email to the submitter (lead experience + audit trail).
- * Disabled when INQUIRY_AUTO_REPLY=0 or when RESEND_API_KEY is missing.
- */
 export async function sendInquiryAutoReply(
   data: ContactFormData
 ): Promise<{ success: boolean; error?: string }> {
@@ -105,8 +139,8 @@ export async function sendInquiryAutoReply(
     return { success: true };
   }
 
-  const resend = getResend();
-  if (!resend) {
+  const transporter = getSmtpTransport();
+  if (!transporter) {
     return { success: true };
   }
 
@@ -114,8 +148,8 @@ export async function sendInquiryAutoReply(
   const safeService = escapeHtml(data.programInterest);
 
   try {
-    await resend.emails.send({
-      from: autoReplyFromAddress(),
+    await transporter.sendMail({
+      from: fromAddress(),
       to: data.email,
       subject: `We received your message — ${SITE_NAME}`,
       html: `
@@ -123,7 +157,7 @@ export async function sendInquiryAutoReply(
           <p>Hi ${safeName},</p>
           <p>Thank you for contacting <strong>${escapeHtml(SITE_NAME)}</strong>. We have received your inquiry regarding <strong>${safeService}</strong> and will respond within <strong>24 hours</strong>.</p>
           <p style="color:#666;font-size:14px;">${escapeHtml(SITE_TAGLINE)}</p>
-          <p style="margin-top:24px;font-size:13px;color:#888;">This is an automated confirmation. Please do not reply to this message if it was sent from a no-reply address.</p>
+          <p style="margin-top:24px;font-size:13px;color:#888;">This is an automated confirmation.</p>
         </div>
       `,
     });

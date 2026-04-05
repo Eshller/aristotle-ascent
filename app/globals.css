@@ -191,14 +191,19 @@
 
 .notebook-input {
   width: 100%;
-  background: transparent;
-  border: none;
+  box-sizing: border-box;
+  background: oklch(1 0 0 / 0.72);
+  border: 1px solid oklch(0.55 0.02 262 / 0.35);
+  border-radius: 0.375rem;
   outline: none;
   font-size: 1rem;
   line-height: 32px;
   color: oklch(0.22 0.035 262);
   font-family: var(--font-sans);
-  padding: 0;
+  padding: 0.2rem 0.5rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .notebook-input::placeholder {
@@ -210,6 +215,14 @@
 
 .notebook-input:focus {
   outline: none;
+  border-color: oklch(0.52 0.11 195 / 0.55);
+  box-shadow: 0 0 0 2px oklch(0.52 0.11 195 / 0.12);
+}
+
+.notebook-input:where(select) {
+  cursor: pointer;
+  line-height: 1.4;
+  min-height: 2.25rem;
 }
 
 .notebook-input option {
