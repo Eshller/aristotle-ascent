@@ -30,7 +30,7 @@ export async function sendContactNotification(
               <td style="padding: 8px 0;">${data.phone || "Not provided"}</td>
             </tr>
             <tr>
-              <td style="padding: 8px 0; font-weight: bold; color: #555;">Program Interest</td>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Service</td>
               <td style="padding: 8px 0;">${data.programInterest}</td>
             </tr>
             <tr>

@@ -65,7 +65,7 @@ export function NotebookForm() {
               name="name"
               required
               minLength={2}
-              placeholder="Write your name here..."
+              placeholder="Your name"
               className="notebook-input"
             />
           </div>
@@ -85,7 +85,7 @@ export function NotebookForm() {
               name="email"
               type="email"
               required
-              placeholder="your@email.com"
+              placeholder="john@email.com"
               className="notebook-input"
             />
           </div>
@@ -104,7 +104,7 @@ export function NotebookForm() {
               id="nb-phone"
               name="phone"
               type="tel"
-              placeholder="+91 98765 43210"
+              placeholder="+1 000 000 0000"
               className="notebook-input"
             />
           </div>
@@ -114,7 +114,7 @@ export function NotebookForm() {
         <div className="notebook-line py-2">
           <div className="flex items-baseline gap-3">
             <label htmlFor="nb-program" className="shrink-0 text-sm font-semibold uppercase tracking-wider text-gold-500/50">
-              Program *
+              Service *
             </label>
             <select
               id="nb-program"
@@ -122,7 +122,7 @@ export function NotebookForm() {
               required
               className="notebook-input cursor-pointer"
             >
-              <option value="">Select a program...</option>
+              <option value="">Select a service...</option>
               {PROGRAM_OPTIONS.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -146,7 +146,7 @@ export function NotebookForm() {
             required
             minLength={10}
             rows={3}
-            placeholder="Tell us about your academic goals..."
+            placeholder="Tell us about your goals and how we can help you..."
             className="notebook-input resize-none"
             style={{
               backgroundImage:
@@ -171,7 +171,7 @@ export function NotebookForm() {
           disabled={pending}
           className="rounded-lg bg-gold-500 px-8 py-3 text-base font-semibold text-navy-950 shadow-md transition-all hover:bg-gold-400 hover:shadow-lg disabled:opacity-50"
         >
-          {pending ? "Sending..." : "Send Inquiry"}
+          {pending ? "Sending..." : "Send Message →"}
         </button>
       </div>
 

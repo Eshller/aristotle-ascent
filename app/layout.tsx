@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Caveat } from "next/font/google";
 import "./globals.css";
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
+import {
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_DESCRIPTION,
+  SITE_URL,
+  CONTACT_INFO,
+} from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,19 +27,19 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} – Premium Education Counselling`,
+    default: `${SITE_NAME} | ${SITE_TAGLINE}`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   keywords: [
     "education counselling",
-    "admissions consulting",
-    "study abroad",
-    "MBA admissions",
+    "education consulting",
     "university admissions",
-    "education experts",
-    "career counselling",
-    "college admissions India",
+    "study abroad",
+    "scholarship guidance",
+    "career pathway planning",
+    "academic tutoring",
+    "parent consulting",
   ],
   authors: [{ name: SITE_NAME }],
   openGraph: {
@@ -41,12 +47,12 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} – Premium Education Counselling`,
+    title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} – Premium Education Counselling`,
+    title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
   },
   robots: {
@@ -61,23 +67,19 @@ const jsonLd = {
   name: SITE_NAME,
   description: SITE_DESCRIPTION,
   url: SITE_URL,
+  email: CONTACT_INFO.email,
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+91-98765-43210",
+    telephone: CONTACT_INFO.phone,
     contactType: "customer service",
-    availableLanguage: ["English", "Hindi"],
+    availableLanguage: ["English"],
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Mumbai",
-    addressRegion: "Maharashtra",
-    addressCountry: "IN",
+    streetAddress: "123 Scholar Avenue",
+    addressLocality: "Education City",
+    addressCountry: "US",
   },
-  sameAs: [
-    "https://linkedin.com/company/aristotleascent",
-    "https://instagram.com/aristotleascent",
-    "https://x.com/aristotleascent",
-  ],
 };
 
 export default function RootLayout({

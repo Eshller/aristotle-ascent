@@ -5,13 +5,12 @@ export function Process() {
   return (
     <SectionWrapper id="process">
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          How It <span className="text-gold-500">Works</span>
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          A structured, transparent process designed to maximise your chances of admission
-          to your dream institution.
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-gold-500">
+          Our Approach
         </p>
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Your Journey in <span className="text-gold-500">Four Steps</span>
+        </h2>
       </div>
 
       <div className="relative mx-auto mt-14 max-w-3xl">
@@ -20,10 +19,10 @@ export function Process() {
 
         <div className="space-y-10">
           {PROCESS_STEPS.map((step) => (
-            <div key={step.step} className="relative flex gap-6">
+            <div key={step.title} className="relative flex gap-6">
               {/* Step number */}
-              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold-500 font-mono text-lg font-bold text-navy-950">
-                {step.step}
+              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-gold-500 bg-navy-950 font-heading text-lg font-bold text-gold-500">
+                {step.stepLabel}
               </div>
 
               {/* Content */}

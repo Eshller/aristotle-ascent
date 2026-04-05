@@ -9,11 +9,15 @@ export function ContactForm() {
   return (
     <SectionWrapper id="contact">
       <div className="text-center">
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-gold-500">
+          Get In Touch
+        </p>
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Get in <span className="text-gold-500">Touch</span>
+          Let&apos;s Start a <span className="text-gold-500">Conversation</span>
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          Scroll down and watch the notebook open — then write to us.
+          Reach out today and discover how Aristotle Ascent can help you or your child achieve
+          academic greatness. Scroll to open the notebook and send us a message.
         </p>
       </div>
 

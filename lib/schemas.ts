@@ -13,7 +13,7 @@ export const contactFormSchema = z.object({
     .optional()
     .or(z.literal("")),
   programInterest: z.enum([...PROGRAM_OPTIONS], {
-    message: "Please select a program",
+    message: "Please select a service",
   }),
   message: z
     .string()

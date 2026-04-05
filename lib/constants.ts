@@ -8,138 +8,149 @@ import type {
 } from "./types";
 
 export const SITE_NAME = "Aristotle Ascent";
+export const SITE_TAGLINE = "Education Counselling & Consulting";
 export const SITE_DESCRIPTION =
-  "Premium education counselling and consulting. Expert guidance for undergraduate, postgraduate, MBA, and study abroad admissions.";
+  "We believe every student has the potential to achieve greatness. Holistic, personalized counselling to guide learners through their educational journeys.";
 export const SITE_URL = process.env.SITE_URL ?? "https://aristotleascent.com";
 
+/** Nav matches the original site: no Home link; Stories → #testimonials */
 export const NAV_LINKS: readonly NavLink[] = [
-  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Stories", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const STATS: readonly Stat[] = [
-  { value: "500+", label: "Students Counselled" },
-  { value: "95%", label: "Admission Success Rate" },
-  { value: "200+", label: "Partner Universities" },
-  { value: "15+", label: "Years of Experience" },
+  { value: "500+", label: "Students Guided" },
+  { value: "95%", label: "Acceptance Rate" },
+  { value: "200+", label: "Partner Institutions" },
+  { value: "12+", label: "Years of Excellence" },
 ];
 
 export const SERVICES: readonly Service[] = [
   {
     icon: "GraduationCap",
-    title: "Undergraduate Admissions",
+    title: "University Admissions Counselling",
     description:
-      "Strategic guidance for securing admission to top undergraduate programs worldwide, from profile building to application submission.",
+      "Strategic guidance through local and international university applications, personal statements, and interview preparation to help students gain entry to their dream institutions.",
   },
   {
-    icon: "BookOpen",
-    title: "Postgraduate Programs",
+    icon: "Compass",
+    title: "Career & Academic Pathway Planning",
     description:
-      "Comprehensive support for Master's and PhD applications, including research proposal development and university shortlisting.",
+      "Helping students map out their educational journey aligned with their passions, strengths, and long-term career ambitions through in-depth assessments and personalized roadmaps.",
   },
   {
-    icon: "Briefcase",
-    title: "MBA Consulting",
+    icon: "Wallet",
+    title: "Scholarship & Financial Aid Guidance",
     description:
-      "Tailored MBA admissions strategy covering school selection, essay refinement, interview preparation, and scholarship applications.",
+      "Identifying the best scholarship opportunities and grants, assisting with compelling applications to make quality education accessible and affordable for every student.",
   },
   {
     icon: "Globe",
-    title: "Study Abroad",
+    title: "Study Abroad Consulting",
     description:
-      "End-to-end guidance for international education, including visa assistance, accommodation, and pre-departure orientation.",
+      "End-to-end support for students pursuing international education — from destination selection, visa processes, to cultural preparation and transition planning.",
   },
   {
-    icon: "Target",
-    title: "Career Counselling",
+    icon: "Lightbulb",
+    title: "Academic Tutoring & Support",
     description:
-      "Personalised career mapping and aptitude assessment to help students choose the right academic path aligned with their goals.",
+      "Personalized academic support and subject-specific tutoring designed to boost performance, build confidence, and develop strong study skills for lifelong learning.",
   },
   {
-    icon: "PenTool",
-    title: "Test Preparation",
+    icon: "Handshake",
+    title: "Parent & Family Consulting",
     description:
-      "Expert strategies and resources for standardised tests including SAT, GRE, GMAT, IELTS, and TOEFL.",
+      "Empowering parents with the knowledge and tools to support their children's academic success, bridging the communication gap between family aspirations and student needs.",
   },
 ];
 
 export const PROCESS_STEPS: readonly ProcessStep[] = [
   {
-    step: 1,
-    title: "Initial Consultation",
+    stepLabel: "I",
+    title: "Discovery Session",
     description:
-      "A detailed one-on-one session to understand your academic background, aspirations, and preferences.",
+      "A deep-dive consultation to understand your background, goals, strengths, and dreams — the foundation of everything we build together.",
   },
   {
-    step: 2,
-    title: "Profile Assessment",
+    stepLabel: "II",
+    title: "Personalised Roadmap",
     description:
-      "Comprehensive evaluation of your academic profile, extracurriculars, and strengths to identify the best-fit opportunities.",
+      "We craft a tailored academic and career strategy that aligns with your unique profile and maximises your opportunities.",
   },
   {
-    step: 3,
-    title: "University Shortlisting",
+    stepLabel: "III",
+    title: "Active Guidance",
     description:
-      "Data-driven selection of universities and programs that align with your profile, goals, and budget.",
+      "Hands-on support through applications, essays, interviews and decisions — you're never navigating this alone.",
   },
   {
-    step: 4,
-    title: "Application Support",
+    stepLabel: "IV",
+    title: "Ongoing Support",
     description:
-      "Hands-on assistance with essays, SOPs, recommendation letters, and application submission.",
-  },
-  {
-    step: 5,
-    title: "Interview Prep & Final Guidance",
-    description:
-      "Mock interviews, visa guidance, and pre-departure support to ensure a smooth transition.",
+      "Our relationship doesn't end at acceptance. We continue supporting your transition and growth well into your academic journey.",
   },
 ];
 
 export const TESTIMONIALS: readonly Testimonial[] = [
   {
-    name: "Priya Sharma",
-    program: "MS Computer Science",
-    university: "Stanford University",
+    name: "Sarah K.",
+    credential: "Accepted to University of Edinburgh, UK",
     quote:
-      "Aristotle Ascent transformed my application journey. Their strategic approach to SOPs and university selection was invaluable. I couldn't have made it to Stanford without their guidance.",
+      "Aristotle Ascent changed the trajectory of my life. My counsellor helped me discover a passion I never knew I had and guided me to a university that felt perfectly right. I couldn't be happier.",
   },
   {
-    name: "Arjun Mehta",
-    program: "MBA",
-    university: "London Business School",
+    name: "James O.",
+    credential: "Full Scholarship, University of Toronto",
     quote:
-      "The personalised attention and deep understanding of the MBA landscape set Aristotle Ascent apart. They helped me craft a compelling narrative that resonated with admissions committees.",
+      "The scholarship guidance I received was extraordinary. They found opportunities I had no idea existed and helped me craft an application that earned me a full scholarship. Truly life-changing.",
   },
   {
-    name: "Ananya Reddy",
-    program: "Undergraduate Engineering",
-    university: "MIT",
+    name: "Mrs. Adebayo",
+    credential: "Parent of Student, Netherlands",
     quote:
-      "From profile building in 10th grade to my MIT acceptance, the team was with me every step. Their long-term approach to admissions consulting is truly exceptional.",
+      "As a parent, I was lost in the maze of university applications. The team guided our entire family with such patience and expertise. My daughter is now thriving abroad — we are beyond grateful.",
   },
 ];
 
 export const CONTACT_INFO: ContactInfo = {
-  email: "contact@aristotleascent.com",
-  phone: "+91 98765 43210",
-  address: "Mumbai, Maharashtra, India",
+  email: "info@aristotleascent.edu",
+  phone: "+1 (800) 000-0000",
+  address: "123 Scholar Avenue, Education City",
+  hours: "Mon–Sat: 8:00 AM – 7:00 PM",
   socials: [
-    { platform: "LinkedIn", url: "https://linkedin.com/company/aristotleascent" },
-    { platform: "Instagram", url: "https://instagram.com/aristotleascent" },
-    { platform: "Twitter", url: "https://x.com/aristotleascent" },
+    { platform: "Instagram", url: "#" },
+    { platform: "LinkedIn", url: "#" },
+    { platform: "Facebook", url: "#" },
+    { platform: "YouTube", url: "#" },
   ],
 };
 
+/** Form / schema: must match service titles exactly */
 export const PROGRAM_OPTIONS = [
-  "Undergraduate Admissions",
-  "Postgraduate Programs",
-  "MBA Consulting",
-  "Study Abroad",
-  "Career Counselling",
-  "Test Preparation",
+  "University Admissions Counselling",
+  "Career & Academic Pathway Planning",
+  "Scholarship & Financial Aid Guidance",
+  "Study Abroad Consulting",
+  "Academic Tutoring & Support",
+  "Parent & Family Consulting",
 ] as const;
+
+/** Footer services column (short labels from the original site) */
+export const FOOTER_SERVICE_LINKS: readonly { label: string; href: string }[] = [
+  { label: "University Admissions", href: "#services" },
+  { label: "Career Planning", href: "#services" },
+  { label: "Scholarships", href: "#services" },
+  { label: "Study Abroad", href: "#services" },
+  { label: "Tutoring", href: "#services" },
+];
+
+export const FOOTER_COMPANY_LINKS: readonly NavLink[] = [
+  { label: "About Us", href: "#about" },
+  { label: "Our Process", href: "#process" },
+  { label: "Success Stories", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
+];

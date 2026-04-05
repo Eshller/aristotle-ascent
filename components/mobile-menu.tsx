@@ -53,7 +53,7 @@ export function MobileMenu() {
               "mt-4 bg-gold-500 font-semibold text-navy-950 hover:bg-gold-400"
             )}
           >
-            Book Consultation
+            Book a Session
           </a>
         </nav>
       </SheetContent>

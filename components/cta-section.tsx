@@ -9,12 +9,15 @@ export function CTASection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(10,22,40,0.15)_0%,_transparent_60%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-navy-800/80">
+          Begin Today
+        </p>
         <h2 className="text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl">
-          Ready to Begin Your Journey?
+          Ready to <em className="font-bold not-italic text-gold-700">Ascend?</em>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-navy-800">
-          Take the first step towards your dream university. Book a free consultation with
-          our expert counsellors and discover your path to academic excellence.
+        <p className="mx-auto mt-4 max-w-2xl text-lg font-light leading-relaxed text-navy-800">
+          Book your free discovery session and take the first step toward the academic future you
+          deserve. Every great journey begins with a single decision.
         </p>
         <div className="mt-8">
           <LinkButton
@@ -22,7 +25,7 @@ export function CTASection() {
             size="lg"
             className="bg-navy-950 px-8 text-base font-semibold text-gold-400 hover:bg-navy-900"
           >
-            Get Started Today
+            Book a Free Consultation
             <ArrowRight className="h-4 w-4" />
           </LinkButton>
         </div>

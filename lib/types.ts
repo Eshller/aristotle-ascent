@@ -15,22 +15,25 @@ export interface Service {
 }
 
 export interface ProcessStep {
-  readonly step: number;
+  /** Display label, e.g. Roman numerals */
+  readonly stepLabel: string;
   readonly title: string;
   readonly description: string;
 }
 
 export interface Testimonial {
   readonly name: string;
-  readonly program: string;
-  readonly university: string;
   readonly quote: string;
+  /** Single line under the name (e.g. program / outcome) */
+  readonly credential: string;
 }
 
 export interface ContactInfo {
   readonly email: string;
   readonly phone: string;
   readonly address: string;
+  /** Hours line as shown to visitors */
+  readonly hours: string;
   readonly socials: readonly SocialLink[];
 }
 
