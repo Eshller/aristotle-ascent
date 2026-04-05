@@ -36,14 +36,14 @@ export function Services() {
         </p>
       </div>
 
-      <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((service, index) => {
           const Icon = ICON_MAP[service.icon];
           const num = String(index + 1).padStart(2, "0");
           return (
             <Card
               key={service.title}
-              className="group relative overflow-hidden border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-500/25 hover:shadow-md"
+              className="group relative h-full overflow-hidden border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-500/25 hover:shadow-md"
             >
               <span
                 className="pointer-events-none absolute right-4 top-4 font-heading text-4xl font-semibold text-gold-500/[0.12] transition-colors group-hover:text-gold-500/20"
@@ -59,12 +59,12 @@ export function Services() {
                   {service.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-1 flex-col">
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
               </CardContent>
-              <CardFooter className="pt-0">
+              <CardFooter className="mt-auto border-t pt-0">
                 <a
                   href={SECTION.contact}
                   className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-gold-600 transition-[gap] hover:gap-3"
