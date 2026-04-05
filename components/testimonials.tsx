@@ -4,51 +4,39 @@ import { TESTIMONIALS } from "@/lib/constants";
 
 export function Testimonials() {
   return (
-    <SectionWrapper id="testimonials" alternate>
-      <div className="text-center">
-        <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-gold-500">
-          Student Stories
+    <SectionWrapper id="testimonials" tone="deep">
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-400">
+          Outcomes
         </p>
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Voices of <span className="text-gold-500">Success</span>
+        <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          Voices from <span className="text-gold-400">recent work</span>
         </h2>
+        <p className="mt-4 text-sm text-white/65">
+          Experiences shared in their own words—details anonymised where requested.
+        </p>
       </div>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
-        {TESTIMONIALS.map((testimonial) => {
-          const initials = testimonial.name
-            .split(" ")
-            .map((n) => n[0])
-            .join("");
-          return (
-            <Card
-              key={testimonial.name}
-              className="border-navy-700 bg-navy-800/50"
-            >
-              <CardContent className="pt-6">
-                <p className="mb-4 text-sm tracking-widest text-gold-500" aria-hidden="true">
-                  ★★★★★
-                </p>
-                <p className="text-sm italic leading-relaxed text-foreground">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                <div className="mt-6 flex items-center gap-3 border-t border-navy-700 pt-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-500/10 font-semibold text-gold-500">
-                    {initials}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {testimonial.credential}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
+      <div className="mt-16 grid gap-6 md:grid-cols-3">
+        {TESTIMONIALS.map((testimonial) => (
+          <Card
+            key={testimonial.name}
+            className="border-white/10 bg-white/[0.04] backdrop-blur-sm transition-colors hover:border-gold-500/25"
+          >
+            <CardContent className="pt-8 pb-6">
+              <p className="mb-5 text-xs tracking-widest text-gold-400/90" aria-hidden="true">
+                ★★★★★
+              </p>
+              <p className="text-sm italic leading-relaxed text-white/88">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+              <div className="mt-8 border-t border-white/10 pt-5">
+                <p className="text-sm font-semibold text-white">{testimonial.name}</p>
+                <p className="mt-1 text-xs text-white/50">{testimonial.credential}</p>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </SectionWrapper>
   );

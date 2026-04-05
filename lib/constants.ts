@@ -8,111 +8,122 @@ import type {
 } from "./types";
 
 export const SITE_NAME = "Aristotle Ascent";
-export const SITE_TAGLINE = "Education Counselling & Consulting";
+export const SITE_TAGLINE = "Higher-education guidance studio";
 export const SITE_DESCRIPTION =
-  "We believe every student has the potential to achieve greatness. Holistic, personalized counselling to guide learners through their educational journeys.";
+  "Independent counselling for ambitious students and families—clear strategy for applications, funding, and global study, with human support at every step.";
 export const SITE_URL = process.env.SITE_URL ?? "https://aristotleascent.com";
 
-/** Nav matches the original site: no Home link; Stories → #testimonials */
+export const SECTION = {
+  home: "/#home",
+  about: "/#about",
+  services: "/#services",
+  process: "/#process",
+  testimonials: "/#testimonials",
+  contact: "/#contact",
+} as const;
+
+export const BLOG_PATH = "/blog" as const;
+
 export const NAV_LINKS: readonly NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Stories", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Studio", href: SECTION.about },
+  { label: "Services", href: SECTION.services },
+  { label: "Method", href: SECTION.process },
+  { label: "Outcomes", href: SECTION.testimonials },
+  { label: "Insights", href: BLOG_PATH },
+  { label: "Contact", href: SECTION.contact },
 ];
 
 export const STATS: readonly Stat[] = [
-  { value: "500+", label: "Students Guided" },
-  { value: "95%", label: "Acceptance Rate" },
-  { value: "200+", label: "Partner Institutions" },
-  { value: "12+", label: "Years of Excellence" },
+  { value: "500+", label: "Learners supported" },
+  { value: "95%", label: "Strong-fit outcomes" },
+  { value: "200+", label: "Institution network" },
+  { value: "12+", label: "Years in practice" },
 ];
 
 export const SERVICES: readonly Service[] = [
   {
     icon: "GraduationCap",
-    title: "University Admissions Counselling",
+    title: "Admissions & application strategy",
     description:
-      "Strategic guidance through local and international university applications, personal statements, and interview preparation to help students gain entry to their dream institutions.",
+      "Structured support for domestic and international applications—positioning, essays and personal statements, interviews, and timelines that reduce last-minute chaos.",
   },
   {
     icon: "Compass",
-    title: "Career & Academic Pathway Planning",
+    title: "Career and pathway design",
     description:
-      "Helping students map out their educational journey aligned with their passions, strengths, and long-term career ambitions through in-depth assessments and personalized roadmaps.",
+      "Clarify direction before you commit: strengths mapping, course and major fit, and a roadmap that connects school choices to long-term career goals.",
   },
   {
     icon: "Wallet",
-    title: "Scholarship & Financial Aid Guidance",
+    title: "Scholarships & financial aid",
     description:
-      "Identifying the best scholarship opportunities and grants, assisting with compelling applications to make quality education accessible and affordable for every student.",
+      "Identify realistic funding paths, prepare competitive scholarship materials, and understand cost trade-offs so decisions stay transparent.",
   },
   {
     icon: "Globe",
-    title: "Study Abroad Consulting",
+    title: "International study planning",
     description:
-      "End-to-end support for students pursuing international education — from destination selection, visa processes, to cultural preparation and transition planning.",
+      "Country shortlists, visa and documentation checkpoints, and practical preparation so moving abroad feels manageable, not overwhelming.",
   },
   {
     icon: "Lightbulb",
-    title: "Academic Tutoring & Support",
+    title: "Academic coaching & skills",
     description:
-      "Personalized academic support and subject-specific tutoring designed to boost performance, build confidence, and develop strong study skills for lifelong learning.",
+      "Targeted tutoring and study systems that build confidence—whether you are raising grades or preparing for standardised tests.",
   },
   {
     icon: "Handshake",
-    title: "Parent & Family Consulting",
+    title: "Family guidance sessions",
     description:
-      "Empowering parents with the knowledge and tools to support their children's academic success, bridging the communication gap between family aspirations and student needs.",
+      "Structured conversations for parents and guardians: expectations, communication, and how to support the student without adding pressure.",
   },
 ];
 
 export const PROCESS_STEPS: readonly ProcessStep[] = [
   {
     stepLabel: "I",
-    title: "Discovery Session",
+    title: "Listen & clarify",
     description:
-      "A deep-dive consultation to understand your background, goals, strengths, and dreams — the foundation of everything we build together.",
+      "We start with your story—academic record, constraints, ambitions, and timeline—so advice is grounded in reality, not generic templates.",
   },
   {
     stepLabel: "II",
-    title: "Personalised Roadmap",
+    title: "Design the plan",
     description:
-      "We craft a tailored academic and career strategy that aligns with your unique profile and maximises your opportunities.",
+      "You receive a prioritised action plan: targets, milestones, and materials to prepare, aligned with your strengths and risk tolerance.",
   },
   {
     stepLabel: "III",
-    title: "Active Guidance",
+    title: "Execute together",
     description:
-      "Hands-on support through applications, essays, interviews and decisions — you're never navigating this alone.",
+      "Hands-on editing, mock interviews, and decision support as deadlines approach—you are never guessing what to do next.",
   },
   {
     stepLabel: "IV",
-    title: "Ongoing Support",
+    title: "Stay supported",
     description:
-      "Our relationship doesn't end at acceptance. We continue supporting your transition and growth well into your academic journey.",
+      "After offers arrive, we help you compare options and prepare for transition—then remain a sounding board as you settle in.",
   },
 ];
 
 export const TESTIMONIALS: readonly Testimonial[] = [
   {
-    name: "Sarah K.",
-    credential: "Accepted to University of Edinburgh, UK",
+    name: "Elena V.",
+    credential: "Graduate programme, Netherlands",
     quote:
-      "Aristotle Ascent changed the trajectory of my life. My counsellor helped me discover a passion I never knew I had and guided me to a university that felt perfectly right. I couldn't be happier.",
+      "They replaced noise with a clear sequence of steps. I always knew what to work on next, and the applications finally felt under control.",
   },
   {
-    name: "James O.",
-    credential: "Full Scholarship, University of Toronto",
+    name: "Marcus T.",
+    credential: "Merit award + placement, North America",
     quote:
-      "The scholarship guidance I received was extraordinary. They found opportunities I had no idea existed and helped me craft an application that earned me a full scholarship. Truly life-changing.",
+      "I almost skipped scholarship rounds—I did not think my profile was competitive. Their framing helped me present my work in a way that actually landed funding.",
   },
   {
-    name: "Mrs. Adebayo",
-    credential: "Parent of Student, Netherlands",
+    name: "The Okonkwo family",
+    credential: "First-gen international study",
     quote:
-      "As a parent, I was lost in the maze of university applications. The team guided our entire family with such patience and expertise. My daughter is now thriving abroad — we are beyond grateful.",
+      "We needed someone who could speak to both our daughter and to us as parents. The sessions were calm, specific, and respectful of our budget.",
   },
 ];
 
@@ -129,28 +140,51 @@ export const CONTACT_INFO: ContactInfo = {
   ],
 };
 
-/** Form / schema: must match service titles exactly */
+/** Form / schema — must match service titles exactly */
 export const PROGRAM_OPTIONS = [
-  "University Admissions Counselling",
-  "Career & Academic Pathway Planning",
-  "Scholarship & Financial Aid Guidance",
-  "Study Abroad Consulting",
-  "Academic Tutoring & Support",
-  "Parent & Family Consulting",
+  "Admissions & application strategy",
+  "Career and pathway design",
+  "Scholarships & financial aid",
+  "International study planning",
+  "Academic coaching & skills",
+  "Family guidance sessions",
 ] as const;
 
-/** Footer services column (short labels from the original site) */
 export const FOOTER_SERVICE_LINKS: readonly { label: string; href: string }[] = [
-  { label: "University Admissions", href: "#services" },
-  { label: "Career Planning", href: "#services" },
-  { label: "Scholarships", href: "#services" },
-  { label: "Study Abroad", href: "#services" },
-  { label: "Tutoring", href: "#services" },
+  { label: "Admissions", href: SECTION.services },
+  { label: "Pathways", href: SECTION.services },
+  { label: "Funding", href: SECTION.services },
+  { label: "Study abroad", href: SECTION.services },
+  { label: "Coaching", href: SECTION.services },
 ];
 
 export const FOOTER_COMPANY_LINKS: readonly NavLink[] = [
-  { label: "About Us", href: "#about" },
-  { label: "Our Process", href: "#process" },
-  { label: "Success Stories", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Studio", href: SECTION.about },
+  { label: "Method", href: SECTION.process },
+  { label: "Outcomes", href: SECTION.testimonials },
+  { label: "Insights", href: BLOG_PATH },
+  { label: "Contact", href: SECTION.contact },
 ];
+
+/** Hero marketing lines (kept in constants for a single source of truth) */
+export const HERO = {
+  eyebrow: "Independent education studio",
+  titleBefore: "Clarity for your",
+  titleAccent: "next chapter",
+  titleAfter: "in higher education",
+  sub:
+    "Strategy-led counselling for students and families navigating competitive admissions, global options, and high-stakes decisions—without the one-size-fits-all playbook.",
+  primaryCta: "Plan a conversation",
+  secondaryCta: "View services",
+} as const;
+
+export const ABOUT = {
+  label: "The studio",
+  headlineBefore: "Thoughtful guidance,",
+  headlineAccent: "built around you",
+  p1: "Aristotle Ascent takes its name from a tradition of rigorous inquiry—but our work is deeply practical. We help you interpret options, manage risk, and move forward with evidence and care.",
+  p2: "Every engagement blends structure with room to breathe: clear deliverables, honest feedback, and space to refine your narrative until it sounds like you—not a template.",
+  quote:
+    "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+  quoteAttr: "Aristotle",
+} as const;

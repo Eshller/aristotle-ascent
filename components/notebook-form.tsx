@@ -11,11 +11,13 @@ const initialState: ActionState = {
   message: "",
 };
 
+const labelCls =
+  "shrink-0 text-xs font-semibold uppercase tracking-wider text-stone-500";
+
 export function NotebookForm() {
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
   const closeNotebook = useNotebookClose();
 
-  // Close notebook after successful submission
   useEffect(() => {
     if (state.success) {
       const timer = setTimeout(() => closeNotebook(), 2000);
@@ -25,20 +27,17 @@ export function NotebookForm() {
 
   if (state.success) {
     return (
-      <div className="flex h-full flex-col items-center justify-center py-16 text-center">
-        <h3 className="font-handwriting text-4xl font-semibold text-gold-400">
-          Thank You!
-        </h3>
-        <p className="mt-4 font-handwriting text-2xl text-gold-400/60">
-          We&apos;ll be reaching out soon...
+      <div className="flex h-full flex-col items-center justify-center py-16 text-center text-stone-800">
+        <h3 className="font-heading text-3xl font-semibold text-gold-600">Received</h3>
+        <p className="mt-3 text-base text-stone-600">
+          We&apos;ll reply within one business day.
         </p>
       </div>
     );
   }
 
   return (
-    <form action={formAction}>
-      {/* Honeypot */}
+    <form action={formAction} className="text-stone-800">
       <input
         name="website"
         type="text"
@@ -48,16 +47,14 @@ export function NotebookForm() {
         aria-hidden="true"
       />
 
-      {/* Title */}
-      <h3 className="notebook-line pb-3 pt-2 font-handwriting text-2xl font-semibold text-gold-500">
-        Send us a message
+      <h3 className="notebook-line pb-3 pt-2 font-heading text-xl font-semibold text-navy-950">
+        Your note
       </h3>
 
       <div className="space-y-1">
-        {/* Name */}
         <div className="notebook-line py-2">
           <div className="flex items-baseline gap-3">
-            <label htmlFor="nb-name" className="shrink-0 text-sm font-semibold uppercase tracking-wider text-gold-500/50">
+            <label htmlFor="nb-name" className={labelCls}>
               Name *
             </label>
             <input
@@ -65,19 +62,18 @@ export function NotebookForm() {
               name="name"
               required
               minLength={2}
-              placeholder="Your name"
+              placeholder="Full name"
               className="notebook-input"
             />
           </div>
           {state.errors?.name && (
-            <p className="text-sm text-red-400">{state.errors.name[0]}</p>
+            <p className="text-sm text-red-600">{state.errors.name[0]}</p>
           )}
         </div>
 
-        {/* Email */}
         <div className="notebook-line py-2">
           <div className="flex items-baseline gap-3">
-            <label htmlFor="nb-email" className="shrink-0 text-sm font-semibold uppercase tracking-wider text-gold-500/50">
+            <label htmlFor="nb-email" className={labelCls}>
               Email *
             </label>
             <input
@@ -85,36 +81,34 @@ export function NotebookForm() {
               name="email"
               type="email"
               required
-              placeholder="john@email.com"
+              placeholder="you@example.com"
               className="notebook-input"
             />
           </div>
           {state.errors?.email && (
-            <p className="text-sm text-red-400">{state.errors.email[0]}</p>
+            <p className="text-sm text-red-600">{state.errors.email[0]}</p>
           )}
         </div>
 
-        {/* Phone */}
         <div className="notebook-line py-2">
           <div className="flex items-baseline gap-3">
-            <label htmlFor="nb-phone" className="shrink-0 text-sm font-semibold uppercase tracking-wider text-gold-500/50">
+            <label htmlFor="nb-phone" className={labelCls}>
               Phone
             </label>
             <input
               id="nb-phone"
               name="phone"
               type="tel"
-              placeholder="+1 000 000 0000"
+              placeholder="Optional"
               className="notebook-input"
             />
           </div>
         </div>
 
-        {/* Program Interest */}
         <div className="notebook-line py-2">
           <div className="flex items-baseline gap-3">
-            <label htmlFor="nb-program" className="shrink-0 text-sm font-semibold uppercase tracking-wider text-gold-500/50">
-              Service *
+            <label htmlFor="nb-program" className={labelCls}>
+              Focus *
             </label>
             <select
               id="nb-program"
@@ -122,7 +116,7 @@ export function NotebookForm() {
               required
               className="notebook-input cursor-pointer"
             >
-              <option value="">Select a service...</option>
+              <option value="">Choose a focus area…</option>
               {PROGRAM_OPTIONS.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -131,14 +125,13 @@ export function NotebookForm() {
             </select>
           </div>
           {state.errors?.programInterest && (
-            <p className="text-sm text-red-400">{state.errors.programInterest[0]}</p>
+            <p className="text-sm text-red-600">{state.errors.programInterest[0]}</p>
           )}
         </div>
 
-        {/* Message */}
         <div className="notebook-line py-2">
-          <label htmlFor="nb-message" className="mb-1 block text-sm font-semibold uppercase tracking-wider text-gold-500/50">
-            Message *
+          <label htmlFor="nb-message" className={`mb-1 block ${labelCls}`}>
+            Context *
           </label>
           <textarea
             id="nb-message"
@@ -146,36 +139,35 @@ export function NotebookForm() {
             required
             minLength={10}
             rows={3}
-            placeholder="Tell us about your goals and how we can help you..."
+            placeholder="Year of entry, countries or schools you’re considering, and what you’d like help with…"
             className="notebook-input resize-none"
             style={{
               backgroundImage:
-                "repeating-linear-gradient(transparent, transparent 35px, rgba(212,168,67,0.25) 35px, rgba(212,168,67,0.25) 36px)",
+                "repeating-linear-gradient(transparent, transparent 35px, oklch(0.52 0.11 195 / 0.12) 35px, oklch(0.52 0.11 195 / 0.12) 36px)",
               lineHeight: "36px",
             }}
           />
           {state.errors?.message && (
-            <p className="text-sm text-red-400">{state.errors.message[0]}</p>
+            <p className="text-sm text-red-600">{state.errors.message[0]}</p>
           )}
         </div>
       </div>
 
       {state.message && !state.success && (
-        <p className="notebook-line py-1 text-base text-red-400">{state.message}</p>
+        <p className="notebook-line py-1 text-sm text-red-600">{state.message}</p>
       )}
 
-      {/* Submit */}
       <div className="notebook-line pt-5 pb-2">
         <button
           type="submit"
           disabled={pending}
-          className="rounded-lg bg-gold-500 px-8 py-3 text-base font-semibold text-navy-950 shadow-md transition-all hover:bg-gold-400 hover:shadow-lg disabled:opacity-50"
+          className="rounded-full bg-navy-950 px-8 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-navy-900 disabled:opacity-50"
         >
-          {pending ? "Sending..." : "Send Message →"}
+          {pending ? "Sending…" : "Send note →"}
         </button>
       </div>
 
-      <div className="mt-4 text-center font-handwriting text-base text-gold-500/30">— 2 —</div>
+      <div className="mt-4 text-center text-sm text-stone-400">— 2 —</div>
     </form>
   );
 }

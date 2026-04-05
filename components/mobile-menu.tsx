@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
+import { NAV_LINKS, SECTION, SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
 import { Menu } from "lucide-react";
 
 export function MobileMenu() {
@@ -23,37 +23,40 @@ export function MobileMenu() {
           <Button
             variant="ghost"
             size="icon"
-            className="text-foreground md:hidden"
+            className="text-foreground lg:hidden"
             aria-label="Open menu"
           />
         }
       >
         <Menu className="h-5 w-5" />
       </SheetTrigger>
-      <SheetContent side="right" className="w-72 border-navy-800 bg-navy-950">
+      <SheetContent side="right" className="w-80 border-border bg-background">
         <SheetHeader>
-          <SheetTitle className="text-left text-foreground">{SITE_NAME}</SheetTitle>
+          <SheetTitle className="text-left font-heading text-lg text-foreground">
+            {SITE_NAME}
+          </SheetTitle>
+          <p className="text-left text-xs text-muted-foreground">{SITE_TAGLINE}</p>
         </SheetHeader>
-        <nav className="mt-8 flex flex-col gap-4" aria-label="Mobile navigation">
+        <nav className="mt-8 flex flex-col gap-1" aria-label="Mobile navigation">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-md px-3 py-2 text-base font-medium text-muted-foreground transition-colors hover:bg-navy-800 hover:text-gold-400"
+              className="rounded-lg px-3 py-2.5 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#contact"
+            href={SECTION.contact}
             onClick={() => setOpen(false)}
             className={cn(
               buttonVariants(),
-              "mt-4 bg-gold-500 font-semibold text-navy-950 hover:bg-gold-400"
+              "mt-4 rounded-full bg-navy-950 font-semibold text-white hover:bg-navy-900"
             )}
           >
-            Book a Session
+            Intro call
           </a>
         </nav>
       </SheetContent>

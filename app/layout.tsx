@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Caveat } from "next/font/google";
+import { DM_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import {
   SITE_NAME,
@@ -8,51 +8,53 @@ import {
   SITE_URL,
   CONTACT_INFO,
 } from "@/lib/constants";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { WebAnalytics } from "@/components/web-analytics";
+import { GoogleAnalytics } from "@/components/google-analytics";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-});
-
-const caveat = Caveat({
-  variable: "--font-caveat",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | ${SITE_TAGLINE}`,
-    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   keywords: [
     "education counselling",
-    "education consulting",
-    "university admissions",
-    "study abroad",
-    "scholarship guidance",
-    "career pathway planning",
-    "academic tutoring",
-    "parent consulting",
+    "university admissions consultant",
+    "study abroad planning",
+    "scholarship applications",
+    "academic coaching",
+    "family education guidance",
   ],
   authors: [{ name: SITE_NAME }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | ${SITE_TAGLINE}`,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | ${SITE_TAGLINE}`,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
   },
   robots: {
@@ -90,7 +92,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${fraunces.variable} h-full`}
     >
       <head>
         <script
@@ -98,7 +100,21 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        <GoogleAnalytics />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:outline-none"
+        >
+          Skip to main content
+        </a>
+        <Navbar />
+        <main id="main-content" className="flex flex-1 flex-col">
+          {children}
+        </main>
+        <Footer />
+        <WebAnalytics />
+      </body>
     </html>
   );
 }

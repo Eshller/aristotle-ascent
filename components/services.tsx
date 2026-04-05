@@ -1,6 +1,6 @@
 import { SectionWrapper } from "./section-wrapper";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { SERVICES } from "@/lib/constants";
+import { SECTION, SERVICES } from "@/lib/constants";
 import {
   GraduationCap,
   Compass,
@@ -22,36 +22,42 @@ const ICON_MAP: Record<string, LucideIcon> = {
 
 export function Services() {
   return (
-    <SectionWrapper id="services" alternate>
-      <div className="text-center">
-        <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-gold-500">
-          What We Offer
+    <SectionWrapper id="services" tone="soft">
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-600">
+          Practice areas
         </p>
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Comprehensive Education <span className="text-gold-500">Services</span>
+        <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          Support across the{" "}
+          <span className="text-gold-600">full journey</span>
         </h2>
+        <p className="mt-4 text-muted-foreground">
+          Pick one focus or combine modules—we shape the scope to your timeline and goals.
+        </p>
       </div>
 
-      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((service, index) => {
           const Icon = ICON_MAP[service.icon];
           const num = String(index + 1).padStart(2, "0");
           return (
             <Card
               key={service.title}
-              className="group relative overflow-hidden border-navy-700 bg-navy-800/50 transition-all duration-300 hover:border-gold-500/50 hover:shadow-lg hover:shadow-gold-500/5"
+              className="group relative overflow-hidden border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-500/25 hover:shadow-md"
             >
               <span
-                className="pointer-events-none absolute right-5 top-5 font-heading text-5xl font-bold text-gold-500/10"
+                className="pointer-events-none absolute right-4 top-4 font-heading text-4xl font-semibold text-gold-500/[0.12] transition-colors group-hover:text-gold-500/20"
                 aria-hidden="true"
               >
                 {num}
               </span>
-              <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-gold-500/40 bg-gold-500/10 transition-colors group-hover:border-gold-500 group-hover:bg-gold-500/20">
-                  {Icon && <Icon className="h-6 w-6 text-gold-500" />}
+              <CardHeader className="pb-2">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-500/10 text-gold-600 transition-colors group-hover:bg-gold-500/15">
+                  {Icon && <Icon className="h-5 w-5" strokeWidth={1.75} />}
                 </div>
-                <CardTitle className="text-lg text-foreground">{service.title}</CardTitle>
+                <CardTitle className="pt-3 font-heading text-lg font-semibold leading-snug">
+                  {service.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-muted-foreground">
@@ -60,10 +66,10 @@ export function Services() {
               </CardContent>
               <CardFooter className="pt-0">
                 <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-gold-500 transition-[gap] hover:gap-3"
+                  href={SECTION.contact}
+                  className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-gold-600 transition-[gap] hover:gap-3"
                 >
-                  Learn More →
+                  Discuss this →
                 </a>
               </CardFooter>
             </Card>

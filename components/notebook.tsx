@@ -19,7 +19,7 @@ function SpiralBinding({ visible }: { readonly visible: boolean }) {
     >
       {Array.from({ length: 14 }).map((_, i) => (
         <div key={i}>
-          <div className="h-5 w-8 rounded-full border-2 border-gold-500/30 bg-navy-700/50 shadow-sm" />
+          <div className="h-5 w-8 rounded-full border-2 border-gold-500/35 bg-stone-200/80 shadow-sm" />
         </div>
       ))}
     </div>
@@ -32,7 +32,7 @@ function RuledPageBackground() {
       className="pointer-events-none absolute inset-0"
       style={{
         backgroundImage:
-          "repeating-linear-gradient(transparent, transparent 35px, rgba(212,168,67,0.25) 35px, rgba(212,168,67,0.25) 36px)",
+          "repeating-linear-gradient(transparent, transparent 35px, oklch(0.52 0.11 195 / 0.14) 35px, oklch(0.52 0.11 195 / 0.14) 36px)",
         backgroundSize: "100% 36px",
       }}
     />
@@ -63,26 +63,26 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
             )}
           >
             {/* Spine shadow */}
-            <div className="absolute inset-y-0 left-1/2 z-20 hidden w-14 -translate-x-1/2 bg-gradient-to-r from-transparent via-black/20 to-transparent md:block" />
+            <div className="absolute inset-y-0 left-1/2 z-20 hidden w-14 -translate-x-1/2 bg-gradient-to-r from-transparent via-stone-900/10 to-transparent md:block" />
 
             {/* Left page */}
-            <div className="relative overflow-hidden bg-navy-900 md:rounded-l-xl">
+            <div className="relative overflow-hidden bg-stone-100 md:rounded-l-xl">
               <RuledPageBackground />
-              <div className="absolute top-0 right-0 hidden h-full w-px bg-gold-500/15 md:block" />
+              <div className="absolute top-0 right-0 hidden h-full w-px bg-gold-500/20 md:block" />
               <div className="relative z-10 h-full p-8 sm:p-10">
                 {leftPage}
               </div>
-              <div className="absolute inset-y-0 right-0 hidden w-6 bg-gradient-to-l from-black/10 to-transparent md:block" />
+              <div className="absolute inset-y-0 right-0 hidden w-6 bg-gradient-to-l from-stone-200/40 to-transparent md:block" />
             </div>
 
             {/* Right page */}
-            <div className="relative overflow-hidden bg-navy-900 md:rounded-r-xl">
+            <div className="relative overflow-hidden bg-stone-100 md:rounded-r-xl">
               <RuledPageBackground />
-              <div className="absolute top-0 left-10 h-full w-px bg-gold-500/15" />
+              <div className="absolute top-0 left-10 h-full w-px bg-gold-500/20" />
               <div className="relative z-10 h-full p-8 pl-14 sm:p-10 sm:pl-16">
                 {rightPage}
               </div>
-              <div className="absolute inset-y-0 left-0 hidden w-6 bg-gradient-to-r from-black/10 to-transparent md:block" />
+              <div className="absolute inset-y-0 left-0 hidden w-6 bg-gradient-to-r from-stone-200/40 to-transparent md:block" />
             </div>
 
             {/* Spiral binding at center */}
@@ -139,8 +139,8 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
                     <div className="h-px w-12 bg-gold-500/40" />
                   </div>
 
-                  <h3 className="font-heading text-3xl font-bold tracking-wider text-gold-500 sm:text-4xl">
-                    Contact Us
+                  <h3 className="font-heading text-3xl font-semibold tracking-tight text-gold-400 sm:text-4xl">
+                    Open the journal
                   </h3>
 
                   <div className="mt-5 flex items-center justify-center gap-3">
@@ -208,7 +208,7 @@ export function NotebookWithScroll({
     }
     if (!isVisible && isOpen) {
       if (timerRef.current) clearTimeout(timerRef.current);
-      setIsOpen(false);
+      queueMicrotask(() => setIsOpen(false));
     }
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);

@@ -1,31 +1,29 @@
 import { LinkButton } from "./link-button";
 import { ArrowRight } from "lucide-react";
+import { SECTION } from "@/lib/constants";
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
-      {/* Gold gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(10,22,40,0.15)_0%,_transparent_60%)]" />
-
-      <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-navy-800/80">
-          Begin Today
+    <section className="relative border-y border-border bg-muted/30 py-20 md:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,oklch(0.52_0.11_195/0.08),transparent)]" />
+      <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-600">
+          Next step
         </p>
-        <h2 className="text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl">
-          Ready to <em className="font-bold not-italic text-gold-700">Ascend?</em>
+        <h2 className="mt-4 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          Ready for a <span className="text-gold-600">focused</span> plan?
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg font-light leading-relaxed text-navy-800">
-          Book your free discovery session and take the first step toward the academic future you
-          deserve. Every great journey begins with a single decision.
+        <p className="mx-auto mt-5 max-w-lg text-muted-foreground">
+          Book a short intro call. We&apos;ll outline whether we&apos;re the right fit, what a
+          realistic timeline looks like, and how to move forward without obligation.
         </p>
-        <div className="mt-8">
+        <div className="mt-10">
           <LinkButton
-            href="#contact"
+            href={SECTION.contact}
             size="lg"
-            className="bg-navy-950 px-8 text-base font-semibold text-gold-400 hover:bg-navy-900"
+            className="inline-flex gap-2 rounded-full bg-navy-950 px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-navy-900"
           >
-            Book a Free Consultation
+            Schedule intro call
             <ArrowRight className="h-4 w-4" />
           </LinkButton>
         </div>

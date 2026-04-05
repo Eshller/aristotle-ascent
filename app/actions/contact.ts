@@ -1,25 +1,38 @@
 "use server";
 
 import { contactFormSchema } from "@/lib/schemas";
-import { sendContactNotification } from "@/lib/email";
+import { sendContactNotification, sendInquiryAutoReply } from "@/lib/email";
 import type { ActionState } from "@/lib/types";
 import { headers } from "next/headers";
 
-// Basic in-memory rate limiting (resets on server restart)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 5;
-const RATE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
+function rateLimitConfig() {
+  const max = Math.max(
+    1,
+    Number.parseInt(process.env.INQUIRY_RATE_LIMIT_MAX ?? "5", 10) || 5
+  );
+  const windowMs = Math.max(
+    60_000,
+    Number.parseInt(
+      process.env.INQUIRY_RATE_LIMIT_WINDOW_MS ?? String(60 * 60 * 1000),
+      10
+    ) || 60 * 60 * 1000
+  );
+  return { max, windowMs };
+}
 
 function isRateLimited(ip: string): boolean {
+  const { max, windowMs } = rateLimitConfig();
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
 
   if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    rateLimitMap.set(ip, { count: 1, resetAt: now + windowMs });
     return false;
   }
 
-  if (entry.count >= RATE_LIMIT) {
+  if (entry.count >= max) {
     return true;
   }
 
@@ -31,17 +44,14 @@ export async function submitContactForm(
   _prevState: ActionState,
   formData: FormData
 ): Promise<ActionState> {
-  // Check honeypot
   const honeypot = formData.get("website");
   if (honeypot) {
-    // Silently accept to fool the bot
     return {
       success: true,
       message: "Your inquiry has been submitted. We'll be in touch soon!",
     };
   }
 
-  // Rate limiting
   const headersList = await headers();
   const ip =
     headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ??
@@ -55,7 +65,6 @@ export async function submitContactForm(
     };
   }
 
-  // Parse and validate
   const raw = {
     name: formData.get("name"),
     email: formData.get("email"),
@@ -83,7 +92,6 @@ export async function submitContactForm(
     };
   }
 
-  // Send email notification
   const emailResult = await sendContactNotification(result.data);
 
   if (!emailResult.success) {
@@ -92,6 +100,11 @@ export async function submitContactForm(
       message:
         "We couldn't process your inquiry at the moment. Please try again or email us directly.",
     };
+  }
+
+  const autoReply = await sendInquiryAutoReply(result.data);
+  if (!autoReply.success) {
+    console.error("[contact] Auto-reply failed:", autoReply.error);
   }
 
   return {
