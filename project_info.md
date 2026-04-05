@@ -1,6 +1,3 @@
-# We don’t just write code; We engineer assets…
-### IIT Bombay Alumni-Led Architecture.
-
 ---
 
 # Website Audit & Revamp Proposal
