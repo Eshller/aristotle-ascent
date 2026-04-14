@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface NotebookProps {
@@ -32,7 +33,7 @@ function RuledPageBackground() {
       className="pointer-events-none absolute inset-0"
       style={{
         backgroundImage:
-          "repeating-linear-gradient(transparent, transparent 35px, oklch(0.52 0.11 195 / 0.14) 35px, oklch(0.52 0.11 195 / 0.14) 36px)",
+          "repeating-linear-gradient(transparent, transparent 35px, oklch(0.72 0.11 85 / 0.14) 35px, oklch(0.72 0.11 85 / 0.14) 36px)",
         backgroundSize: "100% 36px",
       }}
     />
@@ -150,8 +151,14 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
                   </div>
                 </div>
 
-                <div className="mt-8 flex h-12 w-12 items-center justify-center rounded-full border border-gold-500/20">
-                  <span className="text-xl font-bold text-gold-500/40">A</span>
+                <div className="relative mt-8 h-12 w-12 overflow-hidden rounded-full border border-gold-500/25 bg-white/90">
+                  <Image
+                    src="/Aristotle Logo.jpg"
+                    alt="Aristotle Ascent logo"
+                    fill
+                    sizes="48px"
+                    className="object-cover"
+                  />
                 </div>
               </div>
 

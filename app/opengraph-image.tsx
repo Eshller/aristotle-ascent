@@ -17,7 +17,7 @@ export default function Image() {
           justifyContent: "center",
           padding: 72,
           background: `
-            radial-gradient(ellipse 100% 80% at 90% 10%, oklch(0.45 0.09 195 / 0.45), transparent 55%),
+            radial-gradient(ellipse 100% 80% at 90% 10%, oklch(0.72 0.09 85 / 0.45), transparent 55%),
             linear-gradient(155deg, oklch(0.14 0.045 262) 0%, oklch(0.18 0.05 262) 100%)
           `,
         }}
@@ -27,7 +27,7 @@ export default function Image() {
             fontSize: 20,
             letterSpacing: "0.28em",
             textTransform: "uppercase",
-            color: "oklch(0.72 0.09 195)",
+            color: "oklch(0.85 0.09 85)",
             marginBottom: 20,
             fontWeight: 600,
           }}

@@ -4,6 +4,7 @@ import {
   SITE_NAME,
   SITE_TAGLINE,
 } from "@/lib/constants";
+import Image from "next/image";
 import { LinkButton } from "./link-button";
 import { MobileMenu } from "./mobile-menu";
 
@@ -19,8 +20,14 @@ export function Navbar() {
           className="flex min-w-0 items-center gap-3 rounded-lg outline-none ring-gold-500/30 focus-visible:ring-2"
           aria-label={`${SITE_NAME} home`}
         >
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-950 font-heading text-sm font-bold text-white">
-            A
+          <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-border/70 bg-white">
+            <Image
+              src="/Aristotle Logo.jpg"
+              alt={`${SITE_NAME} logo`}
+              fill
+              sizes="36px"
+              className="object-cover"
+            />
           </div>
           <div className="min-w-0 leading-tight">
             <span className="block truncate font-heading text-base font-semibold tracking-tight text-foreground">

@@ -64,7 +64,7 @@ export function Services() {
                   {service.description}
                 </p>
               </CardContent>
-              <CardFooter className="mt-auto border-t pt-0">
+              <CardFooter className="mt-auto">
                 <a
                   href={SECTION.contact}
                   className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-gold-600 transition-[gap] hover:gap-3"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import {
   SECTION,
@@ -42,8 +43,14 @@ export function Footer() {
               href={SECTION.home}
               className="inline-flex items-center gap-3 rounded-lg outline-none ring-gold-400/30 focus-visible:ring-2"
             >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white font-heading text-sm font-bold text-navy-950">
-                A
+              <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-white/25 bg-white">
+                <Image
+                  src="/Aristotle Logo.jpg"
+                  alt={`${SITE_NAME} logo`}
+                  fill
+                  sizes="36px"
+                  className="object-cover"
+                />
               </div>
               <div className="leading-tight">
                 <span className="block font-heading font-semibold">{SITE_NAME}</span>
