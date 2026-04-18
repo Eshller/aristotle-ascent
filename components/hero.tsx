@@ -13,8 +13,8 @@ export function Hero() {
         style={{
           background: `
             radial-gradient(ellipse 120% 80% at 80% 20%, oklch(0.74 0.10 85 / 0.30), transparent 55%),
-            radial-gradient(ellipse 90% 70% at 10% 90%, oklch(0.28 0.08 262 / 0.5), transparent 50%),
-            linear-gradient(165deg, oklch(0.12 0.045 262) 0%, oklch(0.16 0.05 262) 100%)
+            radial-gradient(ellipse 90% 70% at 10% 90%, oklch(0.34 0.08 236 / 0.55), transparent 50%),
+            linear-gradient(165deg, oklch(0.26 0.07 236) 0%, oklch(0.34 0.08 236) 100%)
           `,
         }}
       />

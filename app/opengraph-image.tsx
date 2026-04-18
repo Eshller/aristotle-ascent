@@ -18,7 +18,7 @@ export default function Image() {
           padding: 72,
           background: `
             radial-gradient(ellipse 100% 80% at 90% 10%, oklch(0.72 0.09 85 / 0.45), transparent 55%),
-            linear-gradient(155deg, oklch(0.14 0.045 262) 0%, oklch(0.18 0.05 262) 100%)
+            linear-gradient(155deg, oklch(0.26 0.07 236) 0%, oklch(0.36 0.08 236) 100%)
           `,
         }}
       >
