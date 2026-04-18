@@ -12,9 +12,9 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 opacity-90"
         style={{
           background: `
-            radial-gradient(ellipse 120% 80% at 80% 20%, oklch(0.74 0.10 85 / 0.30), transparent 55%),
-            radial-gradient(ellipse 90% 70% at 10% 90%, oklch(0.34 0.08 236 / 0.55), transparent 50%),
-            linear-gradient(165deg, oklch(0.26 0.07 236) 0%, oklch(0.34 0.08 236) 100%)
+            radial-gradient(ellipse 120% 80% at 80% 20%, oklch(0.82 0.08 35 / 0.30), transparent 55%),
+            radial-gradient(ellipse 90% 70% at 10% 90%, oklch(0.30 0.08 295 / 0.58), transparent 50%),
+            linear-gradient(165deg, oklch(0.20 0.07 295) 0%, oklch(0.28 0.09 295) 100%)
           `,
         }}
       />

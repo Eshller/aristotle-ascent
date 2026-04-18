@@ -5,7 +5,7 @@ import { SECTION } from "@/lib/constants";
 export function CTASection() {
   return (
     <section className="relative border-y border-border bg-muted/30 py-20 md:py-28">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,oklch(0.72_0.11_85/0.10),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,oklch(0.80_0.08_35/0.12),transparent)]" />
       <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-600">
           Next step

@@ -12,18 +12,18 @@
   --font-heading: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-handwriting: var(--font-dm-sans), ui-sans-serif, sans-serif;
 
-  /* Brand blue scale (from logo) */
-  --color-navy-950: oklch(0.30 0.07 236);
-  --color-navy-900: oklch(0.38 0.075 236);
-  --color-navy-800: oklch(0.46 0.08 236);
-  --color-navy-700: oklch(0.56 0.085 236);
-  --color-navy-600: oklch(0.66 0.08 236);
+  /* Premium indigo scale */
+  --color-navy-950: oklch(0.22 0.07 295);
+  --color-navy-900: oklch(0.29 0.08 295);
+  --color-navy-800: oklch(0.36 0.09 295);
+  --color-navy-700: oklch(0.46 0.10 295);
+  --color-navy-600: oklch(0.56 0.11 295);
 
-  /* Accent: champagne gold (maps to prior gold-* utilities site-wide) */
-  --color-gold-500: oklch(0.72 0.11 85);
-  --color-gold-400: oklch(0.80 0.10 85);
-  --color-gold-300: oklch(0.87 0.08 85);
-  --color-gold-600: oklch(0.62 0.11 85);
+  /* Accent: rose champagne (maps to prior gold-* utilities site-wide) */
+  --color-gold-500: oklch(0.78 0.08 35);
+  --color-gold-400: oklch(0.84 0.07 35);
+  --color-gold-300: oklch(0.90 0.05 35);
+  --color-gold-600: oklch(0.66 0.10 35);
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -65,38 +65,38 @@
 
 /* Warm light editorial base */
 :root {
-  --background: oklch(0.975 0.012 236);
-  --foreground: oklch(0.30 0.06 236);
+  --background: oklch(0.975 0.01 75);
+  --foreground: oklch(0.27 0.04 300);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.30 0.06 236);
+  --card-foreground: oklch(0.27 0.04 300);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.30 0.06 236);
-  --primary: oklch(0.72 0.11 85);
+  --popover-foreground: oklch(0.27 0.04 300);
+  --primary: oklch(0.78 0.08 35);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.94 0.02 236);
-  --secondary-foreground: oklch(0.30 0.06 236);
-  --muted: oklch(0.94 0.02 236);
-  --muted-foreground: oklch(0.52 0.06 236);
-  --accent: oklch(0.72 0.11 85);
+  --secondary: oklch(0.94 0.012 35);
+  --secondary-foreground: oklch(0.27 0.04 300);
+  --muted: oklch(0.95 0.01 35);
+  --muted-foreground: oklch(0.48 0.02 300);
+  --accent: oklch(0.78 0.08 35);
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.86 0.02 236);
-  --input: oklch(0.86 0.02 236);
-  --ring: oklch(0.72 0.11 85);
-  --chart-1: oklch(0.72 0.11 85);
-  --chart-2: oklch(0.56 0.07 236);
-  --chart-3: oklch(0.66 0.08 236);
-  --chart-4: oklch(0.74 0.06 236);
-  --chart-5: oklch(0.84 0.04 236);
+  --border: oklch(0.86 0.012 35);
+  --input: oklch(0.86 0.012 35);
+  --ring: oklch(0.78 0.08 35);
+  --chart-1: oklch(0.78 0.08 35);
+  --chart-2: oklch(0.46 0.10 295);
+  --chart-3: oklch(0.66 0.10 35);
+  --chart-4: oklch(0.72 0.06 35);
+  --chart-5: oklch(0.82 0.03 35);
   --radius: 0.75rem;
-  --sidebar: oklch(0.975 0.012 236);
-  --sidebar-foreground: oklch(0.30 0.06 236);
-  --sidebar-primary: oklch(0.72 0.11 85);
+  --sidebar: oklch(0.975 0.01 75);
+  --sidebar-foreground: oklch(0.27 0.04 300);
+  --sidebar-primary: oklch(0.78 0.08 35);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.94 0.02 236);
-  --sidebar-accent-foreground: oklch(0.30 0.06 236);
-  --sidebar-border: oklch(0.86 0.02 236);
-  --sidebar-ring: oklch(0.72 0.11 85);
+  --sidebar-accent: oklch(0.95 0.01 35);
+  --sidebar-accent-foreground: oklch(0.27 0.04 300);
+  --sidebar-border: oklch(0.86 0.012 35);
+  --sidebar-ring: oklch(0.78 0.08 35);
 }
 
 @layer base {
@@ -184,7 +184,7 @@
   }
 }
 
-/* Contact notebook — light pages, logo-matched yellow rules */
+/* Contact notebook — light pages, rose-champagne rules */
 .notebook-line {
   border-bottom: 1px solid transparent;
 }
@@ -193,12 +193,12 @@
   width: 100%;
   box-sizing: border-box;
   background: oklch(1 0 0 / 0.72);
-  border: 1px solid oklch(0.58 0.05 236 / 0.30);
+  border: 1px solid oklch(0.56 0.03 300 / 0.30);
   border-radius: 0.375rem;
   outline: none;
   font-size: 1rem;
   line-height: 32px;
-  color: oklch(0.30 0.06 236);
+  color: oklch(0.27 0.04 300);
   font-family: var(--font-sans);
   padding: 0.2rem 0.5rem;
   transition:
@@ -207,7 +207,7 @@
 }
 
 .notebook-input::placeholder {
-  color: oklch(0.56 0.05 236);
+  color: oklch(0.50 0.02 300);
   font-style: normal;
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -215,8 +215,8 @@
 
 .notebook-input:focus {
   outline: none;
-  border-color: oklch(0.72 0.11 85 / 0.55);
-  box-shadow: 0 0 0 2px oklch(0.72 0.11 85 / 0.12);
+  border-color: oklch(0.78 0.08 35 / 0.55);
+  box-shadow: 0 0 0 2px oklch(0.78 0.08 35 / 0.14);
 }
 
 .notebook-input:where(select) {
@@ -227,7 +227,7 @@
 
 .notebook-input option {
   background: oklch(1 0 0);
-  color: oklch(0.30 0.06 236);
+  color: oklch(0.27 0.04 300);
   font-family: var(--font-sans);
   font-size: 0.95rem;
   padding: 8px;
