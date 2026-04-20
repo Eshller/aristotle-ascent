@@ -22,7 +22,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="lg:col-span-12 lg:-mt-4 animate-fade-in">
+        <div className="lg:col-span-12 animate-fade-in">
           <figure className="relative border border-border bg-card px-8 py-12 sm:px-14 sm:py-16 lg:px-20 lg:py-20">
             <div
               className="pointer-events-none absolute left-6 top-6 h-12 w-12 border-l-2 border-t-2 border-gold-500/25 sm:left-10 sm:top-10"
@@ -32,12 +32,6 @@ export function About() {
               className="pointer-events-none absolute right-6 bottom-6 h-12 w-12 border-b-2 border-r-2 border-gold-500/25 sm:right-10 sm:bottom-10"
               aria-hidden="true"
             />
-            <div
-              className="pointer-events-none absolute left-1/2 top-8 -translate-x-1/2 font-heading text-[clamp(4rem,12vw,9rem)] leading-none text-gold-500/[0.07]"
-              aria-hidden="true"
-            >
-              &ldquo;
-            </div>
             <blockquote className="relative z-10 mx-auto max-w-4xl text-center">
               <p className="font-heading text-xl font-normal italic leading-relaxed text-foreground sm:text-2xl lg:text-[1.75rem] lg:leading-[1.55]">
                 {ABOUT.quote}
