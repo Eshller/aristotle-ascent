@@ -35,46 +35,52 @@ export function Footer() {
   const phoneDigits = CONTACT_INFO.phone.replace(/[^\d+]/g, "");
 
   return (
-    <footer className="border-t border-white/10 bg-navy-950 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <a
-              href={SECTION.home}
-              className="inline-flex items-center gap-3 rounded-lg outline-none ring-gold-400/30 focus-visible:ring-2"
-            >
-              <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-white/25 bg-white">
-                <Image
-                  src="/Aristotle Logo.jpg"
-                  alt={`${SITE_NAME} logo`}
-                  fill
-                  sizes="36px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="leading-tight">
-                <span className="block font-heading font-semibold">{SITE_NAME}</span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-white/55">
-                  {SITE_TAGLINE}
-                </span>
-              </div>
-            </a>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-              Independent counselling for admissions, funding, and global study—structured,
-              transparent, and respectful of your time.
-            </p>
-          </div>
+    <footer className="relative bg-navy-950 text-white">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-500/45 to-transparent"
+        aria-hidden="true"
+      />
+      <div className="mx-auto max-w-[min(100%,88rem)] px-5 pb-16 pt-20 sm:px-8 lg:px-12">
+        <div className="flex flex-col gap-10 border-b border-white/10 pb-14 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+          <a
+            href={SECTION.home}
+            className="group inline-flex max-w-md items-start gap-4 rounded-lg outline-none ring-gold-400/30 focus-visible:ring-2"
+          >
+            <div className="relative mt-1 h-11 w-11 shrink-0 overflow-hidden rounded-sm border border-white/20 bg-white">
+              <Image
+                src="/Aristotle Logo.jpg"
+                alt={`${SITE_NAME} logo`}
+                fill
+                sizes="44px"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <span className="block font-heading text-2xl font-medium tracking-tight transition group-hover:text-gold-300 sm:text-3xl">
+                {SITE_NAME}
+              </span>
+              <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.22em] text-white/50">
+                {SITE_TAGLINE}
+              </span>
+              <p className="mt-6 text-sm leading-[1.75] text-white/55">
+                Independent counselling for admissions, funding, and global study—structured,
+                transparent, and respectful of your time.
+              </p>
+            </div>
+          </a>
+        </div>
 
+        <div className="grid gap-12 pt-14 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-400">
+            <h3 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-400">
               Services
             </h3>
-            <ul className="mt-5 space-y-2.5">
+            <ul className="mt-6 space-y-3">
               {FOOTER_SERVICE_LINKS.map((item) => (
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-sm text-white/55 transition-colors hover:text-gold-400"
+                    className="text-sm text-white/55 transition-colors hover:text-gold-300"
                   >
                     {item.label}
                   </a>
@@ -84,15 +90,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-400">
+            <h3 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-400">
               Navigate
             </h3>
-            <ul className="mt-5 space-y-2.5">
+            <ul className="mt-6 space-y-3">
               {FOOTER_COMPANY_LINKS.map((link) => (
                 <li key={`${link.label}-${link.href}`}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/55 transition-colors hover:text-gold-400"
+                    className="text-sm text-white/55 transition-colors hover:text-gold-300"
                   >
                     {link.label}
                   </a>
@@ -101,16 +107,16 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-400">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h3 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-400">
               Connect
             </h3>
-            <ul className="mt-5 space-y-2.5">
+            <ul className="mt-6 space-y-3">
               {CONTACT_INFO.socials.map((social) => (
                 <li key={social.platform}>
                   <a
                     href={social.url}
-                    className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-gold-400"
+                    className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-gold-300"
                   >
                     <span className="text-gold-400/80">{followIcon(social.platform)}</span>
                     {social.platform}
@@ -118,24 +124,24 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 space-y-2 text-sm text-white/55">
-              <a href={`mailto:${CONTACT_INFO.email}`} className="block hover:text-gold-400">
+            <div className="mt-8 space-y-2 border-t border-white/10 pt-8 text-sm text-white/55">
+              <a href={`mailto:${CONTACT_INFO.email}`} className="block hover:text-gold-300">
                 {CONTACT_INFO.email}
               </a>
-              <a href={`tel:${phoneDigits}`} className="block hover:text-gold-400">
+              <a href={`tel:${phoneDigits}`} className="block hover:text-gold-300">
                 {CONTACT_INFO.phone}
               </a>
             </div>
           </div>
         </div>
 
-        <Separator className="my-10 bg-white/10" />
+        <Separator className="my-12 bg-white/10" />
 
         <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-          <p className="text-xs text-white/45">
+          <p className="text-[11px] text-white/40">
             &copy; {currentYear} {SITE_NAME}. {SITE_TAGLINE}.
           </p>
-          <p className="text-xs text-white/35">Privacy · Terms</p>
+          <p className="text-[11px] text-white/30">Privacy · Terms</p>
         </div>
       </div>
     </footer>

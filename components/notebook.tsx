@@ -33,7 +33,7 @@ function RuledPageBackground() {
       className="pointer-events-none absolute inset-0"
       style={{
         backgroundImage:
-          "repeating-linear-gradient(transparent, transparent 35px, oklch(0.80 0.08 35 / 0.14) 35px, oklch(0.80 0.08 35 / 0.14) 36px)",
+          "repeating-linear-gradient(transparent, transparent 35px, oklch(0.58 0.12 42 / 0.14) 35px, oklch(0.58 0.12 42 / 0.14) 36px)",
         backgroundSize: "100% 36px",
       }}
     />
@@ -54,11 +54,11 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
         )}
         style={{ perspective: "2500px" }}
       >
-        <div className="relative min-h-[640px]">
+        <div className="relative min-h-[680px]">
           {/* === TWO-PAGE SPREAD (sits underneath the cover) === */}
           <div
             className={cn(
-              "absolute inset-0 grid min-h-[640px] grid-cols-1 overflow-hidden rounded-xl md:grid-cols-2",
+              "absolute inset-0 grid min-h-[680px] grid-cols-1 overflow-hidden rounded-sm md:grid-cols-2",
               "transition-opacity duration-500",
               isOpen ? "opacity-100 delay-500" : "opacity-0"
             )}
@@ -67,7 +67,7 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
             <div className="absolute inset-y-0 left-1/2 z-20 hidden w-14 -translate-x-1/2 bg-gradient-to-r from-transparent via-stone-900/10 to-transparent md:block" />
 
             {/* Left page */}
-            <div className="relative overflow-hidden bg-stone-100 md:rounded-l-xl">
+            <div className="relative overflow-hidden bg-stone-100 md:rounded-l-sm">
               <RuledPageBackground />
               <div className="absolute top-0 right-0 hidden h-full w-px bg-gold-500/20 md:block" />
               <div className="relative z-10 h-full p-8 sm:p-10">
@@ -77,7 +77,7 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
             </div>
 
             {/* Right page */}
-            <div className="relative overflow-hidden bg-stone-100 md:rounded-r-xl">
+            <div className="relative overflow-hidden bg-stone-100 md:rounded-r-sm">
               <RuledPageBackground />
               <div className="absolute top-0 left-10 h-full w-px bg-gold-500/20" />
               <div className="relative z-10 h-full p-8 pl-14 sm:p-10 sm:pl-16">
@@ -95,7 +95,7 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
           {/* === FRONT COVER — flips like turning a real book page === */}
           <div
             className={cn(
-              "absolute inset-0 z-40 overflow-hidden rounded-xl shadow-2xl",
+              "absolute inset-0 z-40 overflow-hidden rounded-sm shadow-2xl",
               isOpen && "pointer-events-none"
             )}
             style={{
@@ -133,7 +133,7 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
 
               {/* Cover content */}
               <div className="relative flex h-full flex-col items-center justify-center px-8">
-                <div className="rounded-xl border border-gold-500/30 p-8 sm:p-12">
+                <div className="rounded-sm border border-gold-500/30 p-8 sm:p-12">
                   <div className="mb-4 flex items-center justify-center gap-3">
                     <div className="h-px w-12 bg-gold-500/40" />
                     <div className="h-2 w-2 rotate-45 bg-gold-500/50" />

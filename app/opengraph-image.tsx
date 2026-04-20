@@ -13,48 +13,80 @@ export default function Image() {
           height: "100%",
           width: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: 72,
-          background: `
-            radial-gradient(ellipse 100% 80% at 90% 10%, oklch(0.84 0.07 35 / 0.45), transparent 55%),
-            linear-gradient(155deg, oklch(0.20 0.07 295) 0%, oklch(0.30 0.09 295) 100%)
-          `,
+          flexDirection: "row",
         }}
       >
         <div
           style={{
-            fontSize: 20,
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "oklch(0.88 0.06 35)",
-            marginBottom: 20,
-            fontWeight: 600,
+            width: "52%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: 64,
+            background: "#f7f4ef",
           }}
         >
-          {SITE_TAGLINE}
+          <div
+            style={{
+              fontSize: 18,
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: "#a34a28",
+              marginBottom: 20,
+              fontWeight: 600,
+            }}
+          >
+            {SITE_TAGLINE}
+          </div>
+          <div
+            style={{
+              fontSize: 56,
+              fontWeight: 600,
+              color: "#1e1c1a",
+              lineHeight: 1.05,
+              maxWidth: 520,
+              fontFamily: "Georgia, serif",
+            }}
+          >
+            {SITE_NAME}
+          </div>
+          <div
+            style={{
+              fontSize: 22,
+              color: "#5c534c",
+              marginTop: 24,
+              maxWidth: 480,
+              lineHeight: 1.45,
+            }}
+          >
+            Clarity for your next chapter in higher education
+          </div>
         </div>
         <div
           style={{
-            fontSize: 64,
-            fontWeight: 600,
-            color: "white",
-            lineHeight: 1.05,
-            maxWidth: 900,
+            width: "48%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: 56,
+            background:
+              "radial-gradient(ellipse 100% 85% at 88% 12%, rgba(196, 90, 48, 0.4), transparent 52%), linear-gradient(165deg, #1a1917 0%, #2d2926 100%)",
           }}
         >
-          {SITE_NAME}
-        </div>
-        <div
-          style={{
-            fontSize: 26,
-            color: "rgba(255,255,255,0.72)",
-            marginTop: 28,
-            maxWidth: 780,
-            lineHeight: 1.45,
-          }}
-        >
-          Clarity for your next chapter in higher education
+          <div
+            style={{
+              fontSize: 28,
+              fontWeight: 500,
+              color: "rgba(255,255,255,0.92)",
+              lineHeight: 1.35,
+              maxWidth: 400,
+              fontFamily: "Georgia, serif",
+            }}
+          >
+            Strategy, narrative, and calm execution—for students and families.
+          </div>
         </div>
       </div>
     ),

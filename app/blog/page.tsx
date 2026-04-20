@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <div className="mx-auto max-w-2xl flex-1 px-4 py-16 sm:px-6 lg:py-24">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-600">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-600">
         In progress
       </p>
       <h1 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">

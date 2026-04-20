@@ -8,20 +8,22 @@ import { NotebookForm } from "./notebook-form";
 export function ContactForm() {
   return (
     <SectionWrapper id="contact" tone="soft">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-600">
-          Start here
-        </p>
-        <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Tell us what you&apos;re <span className="text-gold-600">working toward</span>
-        </h2>
-        <p className="mt-4 text-muted-foreground">
-          Scroll to open the journal—then share a few details. We read every message and reply
-          within one business day.
+      <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-12">
+        <div className="lg:col-span-5 lg:text-left">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.36em] text-gold-600">
+            Start here
+          </p>
+          <h2 className="mt-4 font-heading text-[2.1rem] font-medium leading-[1.1] tracking-tight text-foreground sm:text-4xl lg:text-[2.65rem]">
+            Tell us what you&apos;re <span className="italic text-gold-600">working toward</span>
+          </h2>
+        </div>
+        <p className="text-base leading-relaxed text-muted-foreground lg:col-span-6 lg:col-start-7">
+          Open the journal when you&apos;re ready—then share a few details. We read every message
+          and reply within one business day.
         </p>
       </div>
 
-      <div className="mt-16">
+      <div className="mt-16 lg:mt-20">
         <NotebookWithScroll
           leftPage={<NotebookLeftPage />}
           rightPage={<NotebookForm />}

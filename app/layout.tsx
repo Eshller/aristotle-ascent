@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces } from "next/font/google";
+import { Outfit, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import {
   SITE_NAME,
@@ -13,15 +13,16 @@ import { Footer } from "@/components/footer";
 import { WebAnalytics } from "@/components/web-analytics";
 import { GoogleAnalytics } from "@/components/google-analytics";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -92,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${fraunces.variable} h-full`}
+      className={`${outfit.variable} ${ebGaramond.variable} h-full`}
     >
       <head>
         <script
@@ -104,7 +105,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:outline-none"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-100 focus:rounded-sm focus:bg-gold-500 focus:px-4 focus:py-2 focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-gold-500/40"
         >
           Skip to main content
         </a>

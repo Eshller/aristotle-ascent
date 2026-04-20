@@ -1,5 +1,4 @@
 import { SectionWrapper } from "./section-wrapper";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { SECTION, SERVICES } from "@/lib/constants";
 import {
   GraduationCap,
@@ -23,56 +22,59 @@ const ICON_MAP: Record<string, LucideIcon> = {
 export function Services() {
   return (
     <SectionWrapper id="services" tone="soft">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-600">
-          Practice areas
-        </p>
-        <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Support across the{" "}
-          <span className="text-gold-600">full journey</span>
-        </h2>
-        <p className="mt-4 text-muted-foreground">
+      <div className="grid gap-12 border-b border-border pb-12 lg:grid-cols-12 lg:items-end lg:gap-10">
+        <div className="lg:col-span-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.36em] text-gold-600">
+            Practice areas
+          </p>
+          <h2 className="mt-4 font-heading text-[2.1rem] font-medium leading-[1.1] tracking-tight text-foreground sm:text-4xl lg:text-[2.65rem]">
+            Support across the{" "}
+            <span className="italic text-gold-600">full journey</span>
+          </h2>
+        </div>
+        <p className="text-base leading-relaxed text-muted-foreground lg:col-span-6 lg:col-start-7 lg:pb-1">
           Pick one focus or combine modules—we shape the scope to your timeline and goals.
         </p>
       </div>
 
-      <div className="mt-16 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="divide-y divide-border">
         {SERVICES.map((service, index) => {
           const Icon = ICON_MAP[service.icon];
           const num = String(index + 1).padStart(2, "0");
           return (
-            <Card
+            <article
               key={service.title}
-              className="group relative h-full overflow-hidden border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-500/25 hover:shadow-md"
+              className="group grid gap-8 py-14 sm:grid-cols-[minmax(0,4rem)_auto_1fr] sm:items-start sm:gap-10 sm:py-16 lg:grid-cols-[minmax(0,5rem)_auto_1fr_auto] lg:py-[4.5rem]"
             >
               <span
-                className="pointer-events-none absolute right-4 top-4 font-heading text-4xl font-semibold text-gold-500/[0.12] transition-colors group-hover:text-gold-500/20"
+                className="font-heading text-3xl font-medium tabular-nums text-gold-500/25 transition-colors group-hover:text-gold-500/40 sm:pt-1 sm:text-4xl"
                 aria-hidden="true"
               >
                 {num}
               </span>
-              <CardHeader className="pb-2">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-500/10 text-gold-600 transition-colors group-hover:bg-gold-500/15">
-                  {Icon && <Icon className="h-5 w-5" strokeWidth={1.75} />}
-                </div>
-                <CardTitle className="pt-3 font-heading text-lg font-semibold leading-snug">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-sm border border-border bg-background text-gold-600 shadow-sm transition group-hover:border-gold-500/25 group-hover:shadow-md">
+                {Icon && <Icon className="h-5 w-5" strokeWidth={1.5} />}
+              </div>
+              <div className="min-w-0">
+                <h3 className="font-heading text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
                   {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-1 flex-col">
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base sm:leading-relaxed">
                   {service.description}
                 </p>
-              </CardContent>
-              <CardFooter className="mt-auto">
+              </div>
+              <div className="flex items-start sm:col-span-3 sm:justify-start lg:col-span-1 lg:justify-end">
                 <a
                   href={SECTION.contact}
-                  className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-gold-600 transition-[gap] hover:gap-3"
+                  className="inline-flex items-center gap-2 border-b border-transparent pb-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-600 transition hover:border-gold-500/50"
                 >
-                  Discuss this →
+                  Discuss
+                  <span aria-hidden="true" className="text-xs">
+                    →
+                  </span>
                 </a>
-              </CardFooter>
-            </Card>
+              </div>
+            </article>
           );
         })}
       </div>

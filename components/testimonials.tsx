@@ -1,41 +1,48 @@
 import { SectionWrapper } from "./section-wrapper";
-import { Card, CardContent } from "@/components/ui/card";
 import { TESTIMONIALS } from "@/lib/constants";
 
 export function Testimonials() {
   return (
-    <SectionWrapper id="testimonials" tone="deep">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-400">
+    <SectionWrapper id="testimonials" tone="paper">
+      <div className="mx-auto max-w-3xl text-center lg:max-w-4xl">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.36em] text-gold-600">
           Outcomes
         </p>
-        <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Voices from <span className="text-gold-400">recent work</span>
+        <h2 className="mt-4 font-heading text-[2.1rem] font-medium leading-[1.1] tracking-tight text-foreground sm:text-4xl lg:text-[2.65rem]">
+          Voices from <span className="italic text-gold-600">recent work</span>
         </h2>
-        <p className="mt-4 text-sm text-white/65">
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
           Experiences shared in their own words—details anonymised where requested.
         </p>
       </div>
 
-      <div className="mt-16 grid gap-6 md:grid-cols-3">
+      <div className="mx-auto mt-16 max-w-4xl space-y-16 sm:mt-20 sm:space-y-20 lg:max-w-5xl">
         {TESTIMONIALS.map((testimonial) => (
-          <Card
+          <figure
             key={testimonial.name}
-            className="border-white/10 bg-white/[0.04] backdrop-blur-sm transition-colors hover:border-gold-500/25"
+            className="grid gap-8 border-l-2 border-gold-500/35 pl-8 sm:pl-10 lg:grid-cols-12 lg:gap-10 lg:pl-12"
           >
-            <CardContent className="pt-8 pb-6">
-              <p className="mb-5 text-xs tracking-widest text-gold-400/90" aria-hidden="true">
+            <div
+              className="font-heading text-5xl leading-none text-gold-500/20 sm:text-6xl lg:col-span-2 lg:text-7xl"
+              aria-hidden="true"
+            >
+              &ldquo;
+            </div>
+            <blockquote className="lg:col-span-7">
+              <p className="font-heading text-lg font-normal italic leading-relaxed text-foreground sm:text-xl lg:text-[1.35rem] lg:leading-[1.65]">
+                {testimonial.quote}
+              </p>
+            </blockquote>
+            <figcaption className="border-t border-border pt-6 lg:col-span-3 lg:border-t-0 lg:border-l lg:pl-8 lg:pt-0">
+              <p className="font-heading text-base font-semibold text-navy-950">{testimonial.name}</p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                {testimonial.credential}
+              </p>
+              <p className="mt-4 text-[10px] tracking-[0.25em] text-gold-600/90" aria-hidden="true">
                 ★★★★★
               </p>
-              <p className="text-sm italic leading-relaxed text-white/88">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <div className="mt-8 border-t border-white/10 pt-5">
-                <p className="text-sm font-semibold text-white">{testimonial.name}</p>
-                <p className="mt-1 text-xs text-white/50">{testimonial.credential}</p>
-              </div>
-            </CardContent>
-          </Card>
+            </figcaption>
+          </figure>
         ))}
       </div>
     </SectionWrapper>

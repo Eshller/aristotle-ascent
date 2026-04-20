@@ -143,7 +143,7 @@ export function NotebookForm() {
             className="notebook-input resize-none"
             style={{
               backgroundImage:
-                "repeating-linear-gradient(transparent, transparent 35px, oklch(0.80 0.08 35 / 0.12) 35px, oklch(0.80 0.08 35 / 0.12) 36px)",
+                "repeating-linear-gradient(transparent, transparent 35px, oklch(0.58 0.12 42 / 0.12) 35px, oklch(0.58 0.12 42 / 0.12) 36px)",
               lineHeight: "36px",
             }}
           />
@@ -161,7 +161,7 @@ export function NotebookForm() {
         <button
           type="submit"
           disabled={pending}
-          className="rounded-full bg-navy-950 px-8 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-navy-900 disabled:opacity-50"
+          className="rounded-sm border border-gold-600/25 bg-gold-500 px-8 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-gold-600 disabled:opacity-50"
         >
           {pending ? "Sending…" : "Send note →"}
         </button>
