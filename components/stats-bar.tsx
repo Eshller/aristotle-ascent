@@ -3,20 +3,20 @@ import { STATS } from "@/lib/constants";
 export function StatsBar() {
   return (
     <section
-      className="relative z-20 -mt-12 border-y border-border bg-card px-4 sm:-mt-16 sm:px-8 lg:-mt-20 lg:px-12"
+      className="bg-[#F7FBFF] px-6 py-8 md:px-10 lg:px-[60px]"
       aria-label="Key statistics"
     >
-      <div className="mx-auto max-w-[min(100%,88rem)]">
-        <div className="grid grid-cols-2 divide-x divide-border sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="flex flex-col items-center justify-center px-4 py-12 text-center sm:px-8 sm:py-14 lg:py-16"
+              className="rounded-2xl border border-[#D4EAFA] bg-white px-4 py-6 text-center shadow-[0_6px_22px_rgba(123,196,226,0.12)]"
             >
-              <p className="font-heading text-4xl font-medium tabular-nums tracking-tight text-navy-950 sm:text-5xl">
+              <p className="font-heading text-5xl font-bold tabular-nums tracking-tight text-[#1E5F8A]">
                 {stat.value}
               </p>
-              <p className="mt-3 max-w-[12rem] text-[10px] font-semibold uppercase leading-relaxed tracking-[0.22em] text-muted-foreground">
+              <p className="mt-2 max-w-48 text-[11px] font-normal uppercase leading-relaxed tracking-[0.18em] text-[#6B8599]">
                 {stat.label}
               </p>
             </div>

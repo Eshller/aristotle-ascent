@@ -33,7 +33,7 @@ function RuledPageBackground() {
       className="pointer-events-none absolute inset-0"
       style={{
         backgroundImage:
-          "repeating-linear-gradient(transparent, transparent 35px, oklch(0.58 0.12 42 / 0.14) 35px, oklch(0.58 0.12 42 / 0.14) 36px)",
+          "repeating-linear-gradient(transparent, transparent 35px, rgba(123,196,226,0.22) 35px, rgba(123,196,226,0.22) 36px)",
         backgroundSize: "100% 36px",
       }}
     />

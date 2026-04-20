@@ -3,40 +3,33 @@ import { ABOUT } from "@/lib/constants";
 
 export function About() {
   return (
-    <SectionWrapper id="about" className="pt-4 md:pt-8">
-      <div className="grid items-start gap-16 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-0">
-        <div className="lg:col-span-5 animate-fade-in-up">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.36em] text-gold-600">
+    <SectionWrapper id="about" className="bg-[#F7FBFF]">
+      <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div className="animate-fade-in-up">
+          <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-[#4B9CC0]">
             {ABOUT.label}
           </p>
-          <h2 className="mt-5 font-heading text-[2.1rem] font-medium leading-[1.12] tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-4 font-heading text-[2.1rem] font-bold leading-[1.12] tracking-tight text-[#1E5F8A] sm:text-4xl lg:text-[3rem]">
             {ABOUT.headlineBefore}{" "}
-            <span className="italic text-gold-600">{ABOUT.headlineAccent}</span>
+            <span className="italic text-[#C9A840]">{ABOUT.headlineAccent}</span>
           </h2>
-        </div>
-
-        <div className="lg:col-span-7 lg:row-span-2 lg:pt-2">
-          <div className="space-y-6 text-base leading-[1.8] text-muted-foreground sm:text-lg">
+          <div className="mt-6 space-y-6 text-[20px] leading-[1.85] text-[#6B8599]">
             <p>{ABOUT.p1}</p>
             <p>{ABOUT.p2}</p>
           </div>
         </div>
 
-        <div className="lg:col-span-12 animate-fade-in">
-          <figure className="relative border border-border bg-card px-8 py-12 sm:px-14 sm:py-16 lg:px-20 lg:py-20">
-            <div
-              className="pointer-events-none absolute left-6 top-6 h-12 w-12 border-l-2 border-t-2 border-gold-500/25 sm:left-10 sm:top-10"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute right-6 bottom-6 h-12 w-12 border-b-2 border-r-2 border-gold-500/25 sm:right-10 sm:bottom-10"
-              aria-hidden="true"
-            />
-            <blockquote className="relative z-10 mx-auto max-w-4xl text-center">
-              <p className="font-heading text-xl font-normal italic leading-relaxed text-foreground sm:text-2xl lg:text-[1.75rem] lg:leading-[1.55]">
+        <div className="animate-fade-in">
+          <figure className="relative overflow-hidden rounded-[24px] border border-[#D4EAFA] bg-white px-8 py-10 shadow-[0_12px_36px_rgba(123,196,226,0.12)] sm:px-10 sm:py-12">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#A8D8EF]/35 blur-2xl" />
+            <span className="mb-3 block font-heading text-[96px] leading-[0.6] text-[#A8D8EF]" aria-hidden="true">
+              &ldquo;
+            </span>
+            <blockquote className="relative">
+              <p className="font-handwriting text-[27px] italic leading-[1.62] text-[#2A3A4A]">
                 {ABOUT.quote}
               </p>
-              <figcaption className="mt-10 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-600">
+              <figcaption className="mt-6 text-[12px] font-bold uppercase tracking-[0.22em] text-[#4B9CC0]">
                 — {ABOUT.quoteAttr}
               </figcaption>
             </blockquote>

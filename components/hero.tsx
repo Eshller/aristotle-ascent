@@ -1,105 +1,72 @@
 import { LinkButton } from "./link-button";
 import { HERO, SECTION } from "@/lib/constants";
+import Image from "next/image";
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-[min(100svh,52rem)] border-b border-border lg:min-h-[min(90svh,54rem)]"
-    >
-      <div className="mx-auto grid min-h-[inherit] max-w-[min(100%,88rem)] lg:grid-cols-12">
-        {/* Editorial column */}
-        <div className="relative flex flex-col justify-center bg-background px-5 py-20 sm:px-10 sm:py-24 lg:col-span-7 lg:border-r lg:border-border/80 lg:px-14 lg:py-28 xl:px-20">
-          <div
-            className="pointer-events-none absolute inset-0 text-foreground/[0.055]"
-            style={{
-              backgroundImage:
-                "radial-gradient(currentColor 0.45px, transparent 0.45px)",
-              backgroundSize: "26px 26px",
-            }}
-            aria-hidden="true"
-          />
-          <div className="relative max-w-xl animate-fade-in-up">
-            <div className="mb-8 flex items-center gap-4">
-              <span className="h-px w-12 shrink-0 bg-gold-500/70" aria-hidden="true" />
-              <span className="h-px flex-1 max-w-[6rem] bg-border" aria-hidden="true" />
-            </div>
+    <section id="home" className="relative overflow-hidden border-b border-border/70">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(135deg, #EBF6FC 0%, #F7FBFF 50%, #FDF9EE 100%)",
+        }}
+      />
+      <div className="pointer-events-none absolute -right-16 top-8 h-56 w-56 rounded-full bg-[#A8D8EF]/30 blur-3xl" />
+      <div className="pointer-events-none absolute -left-12 bottom-8 h-44 w-44 rounded-full bg-[#F5E9AE]/35 blur-3xl" />
 
-            <p className="text-[10px] font-semibold uppercase tracking-[0.38em] text-gold-600">
-              {HERO.eyebrow}
-            </p>
-
-            <h1 className="mt-5 font-heading text-[2.65rem] font-medium leading-[1.02] tracking-tight text-navy-950 sm:text-5xl lg:text-[3.5rem] xl:text-[3.75rem]">
-              {HERO.titleBefore}{" "}
-              <span className="font-normal italic text-gold-600">{HERO.titleAccent}</span>
-              <br />
-              <span className="text-navy-900">{HERO.titleAfter}</span>
-            </h1>
-
-            <div className="mt-10 max-w-lg border-l-2 border-gold-500/35 pl-6 sm:pl-8">
-              <p className="text-base leading-[1.75] text-muted-foreground sm:text-[1.0625rem]">
-                {HERO.sub}
-              </p>
-            </div>
-
-            <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-              <LinkButton
-                href={SECTION.contact}
-                size="lg"
-                className="rounded-sm border border-gold-600/25 bg-gold-500 px-10 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-primary-foreground transition hover:bg-gold-600"
-              >
-                {HERO.primaryCta}
-              </LinkButton>
-              <LinkButton
-                href={SECTION.services}
-                variant="outline"
-                size="lg"
-                className="rounded-sm border-navy-950/20 bg-transparent px-10 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] text-navy-950 transition hover:border-gold-500/40 hover:bg-muted/50"
-              >
-                {HERO.secondaryCta}
-              </LinkButton>
-            </div>
+      <div className="relative mx-auto grid min-h-[min(88svh,52rem)] max-w-[1200px] items-center gap-12 px-6 pb-14 pt-28 md:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-[60px] lg:pb-20 lg:pt-32">
+        <div className="animate-fade-in-up">
+          <p className="mb-6 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.34em] text-[#4B9CC0]">
+            <span className="h-[2px] w-8 bg-[#7BC4E2]" aria-hidden="true" />
+            {HERO.eyebrow}
+          </p>
+          <h1 className="font-heading text-[2.7rem] leading-[1.08] tracking-tight text-[#1E5F8A] sm:text-[3.4rem] lg:text-[4rem]">
+            {HERO.titleBefore}{" "}
+            <span className="italic text-[#C9A840]">{HERO.titleAccent}</span>
+            <br />
+            <span className="text-[#1E5F8A]">{HERO.titleAfter}</span>
+          </h1>
+          <p className="mt-8 max-w-2xl text-[1.16rem] leading-[1.8] text-[#6B8599]">
+            {HERO.sub}
+          </p>
+          <div className="mt-11 flex flex-wrap gap-3">
+            <LinkButton
+              href={SECTION.contact}
+              size="lg"
+              className="rounded-full bg-[#7BC4E2] px-8 py-3 text-[12px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_4px_18px_rgba(123,196,226,0.45)] transition hover:-translate-y-0.5 hover:bg-[#4B9CC0]"
+            >
+              Start Your Journey
+            </LinkButton>
+            <LinkButton
+              href={SECTION.services}
+              variant="outline"
+              size="lg"
+              className="rounded-full border-2 border-[#7BC4E2] bg-white px-8 py-3 text-[12px] font-bold uppercase tracking-[0.18em] text-[#4B9CC0] transition hover:-translate-y-0.5 hover:bg-[#A8D8EF]/30"
+            >
+              Explore Services
+            </LinkButton>
           </div>
         </div>
 
-        {/* Ledger column */}
-        <div className="relative flex min-h-[36vh] flex-col justify-center bg-navy-950 px-6 py-16 sm:px-10 lg:col-span-5 lg:min-h-0 lg:px-12 xl:px-16">
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background: `
-                radial-gradient(ellipse 90% 70% at 72% 22%, oklch(0.62 0.14 42 / 0.32), transparent 55%),
-                radial-gradient(ellipse 80% 55% at 0% 100%, oklch(0.32 0.04 55 / 0.48), transparent 45%),
-                linear-gradient(168deg, oklch(0.19 0.024 55) 0%, oklch(0.28 0.028 55) 100%)
-              `,
-            }}
-            aria-hidden="true"
-          />
-          <div className="pointer-events-none absolute -right-16 top-1/3 h-64 w-64 rounded-full bg-gold-500/12 blur-3xl animate-float-soft" />
-          <div className="relative mx-auto w-full max-w-md space-y-0 lg:mx-0 lg:ml-auto">
-            <div className="animate-fade-in animation-delay-200 border-y border-white/15 py-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.36em] text-gold-300/95">
-                {HERO.eyebrow}
-              </p>
+        <div className="animate-fade-in animation-delay-200">
+          <div className="mx-auto max-w-[390px] rounded-3xl border border-[#D4EAFA] bg-white/92 p-8 shadow-[0_16px_42px_rgba(123,196,226,0.14)]">
+            <div className="relative mx-auto h-44 w-44 overflow-hidden rounded-2xl border border-[#D4EAFA]/70 bg-[#F7FBFF]">
+              <Image
+                src="/Aristotle Logo.jpg"
+                alt="Aristotle Ascent logo"
+                fill
+                sizes="176px"
+                className="object-contain p-6"
+              />
             </div>
-            <div className="animate-fade-in animation-delay-200 border-b border-white/10 py-8">
-              <p className="font-heading text-[1.35rem] font-normal leading-snug text-white/90 sm:text-2xl">
-                Strategy, narrative, and deadlines—handled in one coherent rhythm.
-              </p>
-            </div>
-            <div className="animate-fade-in animation-delay-300 flex items-end justify-between gap-6 border-b border-white/10 py-6">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/45">
-                  Focus
-                </p>
-                <p className="mt-1 font-heading text-lg text-gold-300/95">Your outcomes</p>
-              </div>
-              <div className="h-1 w-32 overflow-hidden rounded-full bg-white/10 sm:w-40">
-                <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-gold-500 to-gold-400" />
-              </div>
-            </div>
-            <p className="animate-fade-in animation-delay-400 pt-6 text-[10px] font-medium uppercase tracking-[0.28em] text-white/35">
-              Private counselling · Higher education
+            <p className="mt-7 text-center text-[20px] leading-[1.62] text-[#6B8599]">
+              Guiding you toward
+              <br />
+              <strong className="font-semibold text-[#4B9CC0]">Academic Excellence</strong>
+            </p>
+            <p className="mt-5 text-center text-[11px] uppercase tracking-[0.24em] text-[#6B8599]/80">
+              Calm guidance, thoughtful outcomes
             </p>
           </div>
         </div>

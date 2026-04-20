@@ -7,24 +7,24 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
-  --font-heading: var(--font-eb-garamond), ui-serif, Georgia, serif;
-  --font-handwriting: var(--font-outfit), ui-sans-serif, sans-serif;
+  --font-heading: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-handwriting: var(--font-crimson), ui-serif, Georgia, serif;
 
-  /* Ink — warm graphite (footer, dark panels) */
-  --color-navy-950: oklch(0.20 0.024 55);
-  --color-navy-900: oklch(0.28 0.028 55);
-  --color-navy-800: oklch(0.36 0.032 55);
-  --color-navy-700: oklch(0.46 0.034 55);
-  --color-navy-600: oklch(0.56 0.036 55);
+  /* Blue family from provided HTML theme */
+  --color-navy-950: #1a4a70;
+  --color-navy-900: #1e5f8a;
+  --color-navy-800: #2f7fa8;
+  --color-navy-700: #4b9cc0;
+  --color-navy-600: #7bc4e2;
 
-  /* Accent: terracotta (still exposed as gold-* site-wide) */
-  --color-gold-300: oklch(0.86 0.09 48);
-  --color-gold-400: oklch(0.76 0.12 44);
-  --color-gold-500: oklch(0.62 0.14 42);
-  --color-gold-600: oklch(0.52 0.13 40);
-  --color-gold-700: oklch(0.42 0.11 38);
+  /* Yellow/champagne family from provided HTML theme */
+  --color-gold-300: #f5e9ae;
+  --color-gold-400: #edd97a;
+  --color-gold-500: #edd97a;
+  --color-gold-600: #c9a840;
+  --color-gold-700: #a8862f;
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -64,40 +64,40 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Warm paper + ink + terracotta */
+/* Palette aligned to aristotle-ascent (2).html */
 :root {
-  --background: oklch(0.985 0.008 82);
-  --foreground: oklch(0.28 0.022 55);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.28 0.022 55);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.28 0.022 55);
-  --primary: oklch(0.58 0.14 42);
-  --primary-foreground: oklch(0.99 0.004 82);
-  --secondary: oklch(0.95 0.02 48);
-  --secondary-foreground: oklch(0.28 0.022 55);
-  --muted: oklch(0.96 0.01 82);
-  --muted-foreground: oklch(0.48 0.028 55);
-  --accent: oklch(0.96 0.018 48);
-  --accent-foreground: oklch(0.28 0.022 55);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.90 0.014 55);
-  --input: oklch(0.90 0.014 55);
-  --ring: oklch(0.58 0.14 42);
-  --chart-1: oklch(0.58 0.14 42);
-  --chart-2: oklch(0.42 0.04 55);
-  --chart-3: oklch(0.68 0.11 44);
-  --chart-4: oklch(0.78 0.08 48);
-  --chart-5: oklch(0.52 0.06 65);
-  --radius: 0.875rem;
-  --sidebar: oklch(0.985 0.008 82);
-  --sidebar-foreground: oklch(0.28 0.022 55);
-  --sidebar-primary: oklch(0.58 0.14 42);
-  --sidebar-primary-foreground: oklch(0.99 0.004 82);
-  --sidebar-accent: oklch(0.95 0.02 48);
-  --sidebar-accent-foreground: oklch(0.28 0.022 55);
-  --sidebar-border: oklch(0.90 0.014 55);
-  --sidebar-ring: oklch(0.58 0.14 42);
+  --background: #f7fbff;
+  --foreground: #2a3a4a;
+  --card: #ffffff;
+  --card-foreground: #2a3a4a;
+  --popover: #ffffff;
+  --popover-foreground: #2a3a4a;
+  --primary: #edd97a;
+  --primary-foreground: #1e5f8a;
+  --secondary: #ebf6fc;
+  --secondary-foreground: #2a3a4a;
+  --muted: #fdfaf2;
+  --muted-foreground: #6b8599;
+  --accent: #f5e9ae;
+  --accent-foreground: #2a3a4a;
+  --destructive: #c94040;
+  --border: #d4eafa;
+  --input: #d4eafa;
+  --ring: #edd97a;
+  --chart-1: #7bc4e2;
+  --chart-2: #4b9cc0;
+  --chart-3: #1e5f8a;
+  --chart-4: #edd97a;
+  --chart-5: #c9a840;
+  --radius: 1rem;
+  --sidebar: #f7fbff;
+  --sidebar-foreground: #2a3a4a;
+  --sidebar-primary: #edd97a;
+  --sidebar-primary-foreground: #1e5f8a;
+  --sidebar-accent: #ebf6fc;
+  --sidebar-accent-foreground: #2a3a4a;
+  --sidebar-border: #d4eafa;
+  --sidebar-ring: #edd97a;
 }
 
 @layer base {
@@ -115,6 +115,9 @@
   h2,
   h3 {
     font-family: var(--font-heading);
+  }
+  p {
+    font-family: var(--font-handwriting);
   }
 }
 
@@ -194,13 +197,13 @@
 .notebook-input {
   width: 100%;
   box-sizing: border-box;
-  background: oklch(1 0 0 / 0.72);
-  border: 1px solid oklch(0.55 0.03 55 / 0.28);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid color-mix(in srgb, #4b9cc0 28%, transparent);
   border-radius: 0.375rem;
   outline: none;
   font-size: 1rem;
   line-height: 32px;
-  color: oklch(0.28 0.022 55);
+  color: #2a3a4a;
   font-family: var(--font-sans);
   padding: 0.2rem 0.5rem;
   transition:
@@ -209,7 +212,7 @@
 }
 
 .notebook-input::placeholder {
-  color: oklch(0.50 0.025 55);
+  color: #6b8599;
   font-style: normal;
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -217,8 +220,8 @@
 
 .notebook-input:focus {
   outline: none;
-  border-color: oklch(0.58 0.14 42 / 0.5);
-  box-shadow: 0 0 0 2px oklch(0.58 0.14 42 / 0.14);
+  border-color: color-mix(in srgb, #edd97a 60%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, #edd97a 20%, transparent);
 }
 
 .notebook-input:where(select) {
@@ -228,8 +231,8 @@
 }
 
 .notebook-input option {
-  background: oklch(1 0 0);
-  color: oklch(0.28 0.022 55);
+  background: #ffffff;
+  color: #2a3a4a;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   padding: 8px;

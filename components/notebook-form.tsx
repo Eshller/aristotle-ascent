@@ -143,7 +143,7 @@ export function NotebookForm() {
             className="notebook-input resize-none"
             style={{
               backgroundImage:
-                "repeating-linear-gradient(transparent, transparent 35px, oklch(0.58 0.12 42 / 0.12) 35px, oklch(0.58 0.12 42 / 0.12) 36px)",
+                "repeating-linear-gradient(transparent, transparent 35px, rgba(123,196,226,0.18) 35px, rgba(123,196,226,0.18) 36px)",
               lineHeight: "36px",
             }}
           />

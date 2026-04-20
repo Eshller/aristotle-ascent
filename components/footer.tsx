@@ -35,13 +35,9 @@ export function Footer() {
   const phoneDigits = CONTACT_INFO.phone.replace(/[^\d+]/g, "");
 
   return (
-    <footer className="relative bg-navy-950 text-white">
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-500/45 to-transparent"
-        aria-hidden="true"
-      />
-      <div className="mx-auto max-w-[min(100%,88rem)] px-5 pb-16 pt-20 sm:px-8 lg:px-12">
-        <div className="flex flex-col gap-10 border-b border-white/10 pb-14 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+    <footer className="bg-[#1E5F8A] px-6 pb-8 pt-14 text-white md:px-10 lg:px-[60px]">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="flex flex-col gap-10 border-b border-white/10 pb-10 lg:flex-row lg:items-end lg:justify-between">
           <a
             href={SECTION.home}
             className="group inline-flex max-w-md items-start gap-4 rounded-lg outline-none ring-gold-400/30 focus-visible:ring-2"
@@ -56,32 +52,29 @@ export function Footer() {
               />
             </div>
             <div>
-              <span className="block font-heading text-2xl font-medium tracking-tight transition group-hover:text-gold-300 sm:text-3xl">
+              <span className="block font-heading text-[18px] font-bold tracking-tight transition group-hover:text-[#A8D8EF]">
                 {SITE_NAME}
               </span>
-              <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.22em] text-white/50">
+              <span className="mt-1 block text-[10px] font-light uppercase tracking-[0.2em] text-[#A8D8EF]">
                 {SITE_TAGLINE}
               </span>
-              <p className="mt-6 text-sm leading-[1.75] text-white/55">
-                Independent counselling for admissions, funding, and global study—structured,
-                transparent, and respectful of your time.
+              <p className="mt-4 text-[16px] leading-[1.8] text-white/55">
+                Guiding students toward their highest potential through thoughtful planning and
+                expert counselling.
               </p>
             </div>
           </a>
         </div>
 
-        <div className="grid gap-12 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-12 py-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <h3 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-400">
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
               Services
             </h3>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-5 space-y-2.5">
               {FOOTER_SERVICE_LINKS.map((item) => (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className="text-sm text-white/55 transition-colors hover:text-gold-300"
-                  >
+                  <a href={item.href} className="text-sm text-white/60 transition-colors hover:text-[#A8D8EF]">
                     {item.label}
                   </a>
                 </li>
@@ -90,16 +83,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-400">
-              Navigate
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
+              Company
             </h3>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-5 space-y-2.5">
               {FOOTER_COMPANY_LINKS.map((link) => (
                 <li key={`${link.label}-${link.href}`}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-white/55 transition-colors hover:text-gold-300"
-                  >
+                  <a href={link.href} className="text-sm text-white/60 transition-colors hover:text-[#A8D8EF]">
                     {link.label}
                   </a>
                 </li>
@@ -107,41 +97,41 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="sm:col-span-2 lg:col-span-1">
-            <h3 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-400">
-              Connect
+          <div>
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
+              Follow Us
             </h3>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-5 space-y-2.5">
               {CONTACT_INFO.socials.map((social) => (
                 <li key={social.platform}>
                   <a
                     href={social.url}
-                    className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-gold-300"
+                    className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[#A8D8EF]"
                   >
-                    <span className="text-gold-400/80">{followIcon(social.platform)}</span>
+                    <span className="text-[#A8D8EF]">{followIcon(social.platform)}</span>
                     {social.platform}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 space-y-2 border-t border-white/10 pt-8 text-sm text-white/55">
-              <a href={`mailto:${CONTACT_INFO.email}`} className="block hover:text-gold-300">
+            <div className="mt-6 space-y-1.5 text-sm text-white/55">
+              <a href={`mailto:${CONTACT_INFO.email}`} className="block hover:text-[#A8D8EF]">
                 {CONTACT_INFO.email}
               </a>
-              <a href={`tel:${phoneDigits}`} className="block hover:text-gold-300">
+              <a href={`tel:${phoneDigits}`} className="block hover:text-[#A8D8EF]">
                 {CONTACT_INFO.phone}
               </a>
             </div>
           </div>
         </div>
 
-        <Separator className="my-12 bg-white/10" />
+        <Separator className="my-2 bg-white/10" />
 
-        <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+        <div className="mt-6 flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
           <p className="text-[11px] text-white/40">
-            &copy; {currentYear} {SITE_NAME}. {SITE_TAGLINE}.
+            &copy; {currentYear} {SITE_NAME} Education Counselling &amp; Consulting. All rights reserved.
           </p>
-          <p className="text-[11px] text-white/30">Privacy · Terms</p>
+          <p className="text-[11px] text-white/30">Privacy Policy · Terms of Service</p>
         </div>
       </div>
     </footer>

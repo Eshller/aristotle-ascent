@@ -18,13 +18,13 @@ export default function Image() {
       >
         <div
           style={{
-            width: "52%",
+            width: "54%",
             height: "100%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             padding: 64,
-            background: "#f7f4ef",
+            background: "#fbfaf7",
           }}
         >
           <div
@@ -32,7 +32,7 @@ export default function Image() {
               fontSize: 18,
               letterSpacing: "0.28em",
               textTransform: "uppercase",
-              color: "#a34a28",
+              color: "#c9a840",
               marginBottom: 20,
               fontWeight: 600,
             }}
@@ -43,7 +43,7 @@ export default function Image() {
             style={{
               fontSize: 56,
               fontWeight: 600,
-              color: "#1e1c1a",
+              color: "#2a3a4a",
               lineHeight: 1.05,
               maxWidth: 520,
               fontFamily: "Georgia, serif",
@@ -54,7 +54,7 @@ export default function Image() {
           <div
             style={{
               fontSize: 22,
-              color: "#5c534c",
+              color: "#6b8599",
               marginTop: 24,
               maxWidth: 480,
               lineHeight: 1.45,
@@ -65,14 +65,14 @@ export default function Image() {
         </div>
         <div
           style={{
-            width: "48%",
+            width: "46%",
             height: "100%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             padding: 56,
             background:
-              "radial-gradient(ellipse 100% 85% at 88% 12%, rgba(196, 90, 48, 0.4), transparent 52%), linear-gradient(165deg, #1a1917 0%, #2d2926 100%)",
+              "radial-gradient(ellipse 95% 85% at 88% 12%, rgba(237,217,122,0.45), transparent 52%), linear-gradient(165deg, #1e5f8a 0%, #1a4a70 100%)",
           }}
         >
           <div

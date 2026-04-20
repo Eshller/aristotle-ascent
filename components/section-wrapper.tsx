@@ -25,16 +25,16 @@ export function SectionWrapper({
     <section
       id={id}
       className={cn(
-        "py-24 md:py-32 lg:py-40",
-        resolvedTone === "soft" && "bg-muted/45",
+        "py-20 md:py-24 lg:py-[120px]",
+        resolvedTone === "soft" && "bg-[linear-gradient(180deg,var(--cream,#FDFAF2)_0%,var(--offwhite,#F7FBFF)_100%)]",
         resolvedTone === "paper" &&
-          "border-y border-border/60 bg-muted/35 text-foreground",
+          "bg-offwhite text-foreground",
         resolvedTone === "deep" &&
           "bg-navy-950 text-white [&_.text-gold-500]:text-gold-400",
         className
       )}
     >
-      <div className="mx-auto max-w-[min(100%,88rem)] px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-10 lg:px-[60px]">
         {children}
       </div>
     </section>

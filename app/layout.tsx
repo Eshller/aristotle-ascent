@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, EB_Garamond } from "next/font/google";
+import { Lato, Playfair_Display, Crimson_Pro } from "next/font/google";
 import "./globals.css";
 import {
   SITE_NAME,
@@ -13,16 +13,24 @@ import { Footer } from "@/components/footer";
 import { WebAnalytics } from "@/components/web-analytics";
 import { GoogleAnalytics } from "@/components/google-analytics";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const lato = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
+  weight: ["300", "400", "700"],
   display: "swap",
 });
 
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
+const crimsonPro = Crimson_Pro({
+  variable: "--font-crimson",
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
   display: "swap",
 });
 
@@ -93,7 +101,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${ebGaramond.variable} h-full`}
+      className={`${lato.variable} ${playfair.variable} ${crimsonPro.variable} h-full`}
     >
       <head>
         <script
