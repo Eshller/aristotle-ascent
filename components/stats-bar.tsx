@@ -16,7 +16,7 @@ export function StatsBar() {
               <p className="font-heading text-5xl font-bold tabular-nums tracking-tight text-[#1E5F8A]">
                 {stat.value}
               </p>
-              <p className="mt-2 max-w-48 text-[11px] font-normal uppercase leading-relaxed tracking-[0.18em] text-[#6B8599]">
+              <p className="mt-2 max-w-48 text-[13px] font-medium uppercase leading-relaxed tracking-[0.18em] text-[#6B8599]">
                 {stat.label}
               </p>
             </div>

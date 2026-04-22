@@ -12,7 +12,7 @@ const initialState: ActionState = {
 };
 
 const labelCls =
-  "shrink-0 text-xs font-semibold uppercase tracking-wider text-stone-500";
+  "shrink-0 text-sm font-semibold uppercase tracking-wider text-stone-500";
 
 export function NotebookForm() {
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);

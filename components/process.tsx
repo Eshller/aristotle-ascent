@@ -5,7 +5,7 @@ export function Process() {
   return (
     <SectionWrapper id="process">
       <div className="mx-auto mb-16 max-w-3xl text-center lg:max-w-4xl">
-        <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-[#4B9CC0]">
+        <p className="text-[13px] font-bold uppercase tracking-[0.34em] text-[#4B9CC0]">
           How we work
         </p>
         <h2 className="mt-4 font-heading text-[2.2rem] font-bold leading-[1.1] tracking-tight text-[#1E5F8A] sm:text-5xl">
@@ -29,7 +29,7 @@ export function Process() {
               <p className="mt-3 text-[15px] leading-[1.7] text-[#6B8599]">
                 {step.description}
               </p>
-              <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#4B9CC0]/80">
+              <p className="mt-5 text-[13px] font-bold uppercase tracking-[0.22em] text-[#4B9CC0]/80">
                 Step {String(i + 1).padStart(2, "0")}
               </p>
             </li>

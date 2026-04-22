@@ -36,7 +36,7 @@ export function Navbar() {
             <span className="block truncate font-heading text-[18px] font-bold tracking-tight text-navy-900">
               {SITE_NAME}
             </span>
-            <span className="hidden truncate text-[10px] font-light uppercase tracking-[0.22em] text-muted-foreground md:block">
+            <span className="hidden truncate text-[16px] font-medium uppercase tracking-[0.22em] text-muted-foreground md:block">
               {SITE_TAGLINE}
             </span>
           </div>
@@ -47,7 +47,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:text-navy-700"
+                className="text-[13px] font-medium uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:text-navy-700"
               >
                 {link.label}
               </a>
@@ -59,7 +59,7 @@ export function Navbar() {
           <div className="hidden lg:block">
             <LinkButton
               href={SECTION.contact}
-              className="rounded-full border border-[#7BC4E2]/70 bg-white px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#1E5F8A] transition hover:bg-[#EBF6FC]"
+              className="rounded-full border border-[#7BC4E2]/70 bg-white px-6 py-2.5 text-[13px] font-bold uppercase tracking-[0.16em] text-[#1E5F8A] transition hover:bg-[#EBF6FC]"
             >
               Book a Session
             </LinkButton>

@@ -45,13 +45,13 @@ export const SERVICES: readonly Service[] = [
     icon: "GraduationCap",
     title: "Admissions & application strategy",
     description:
-      "Structured support for domestic and international applications—positioning, essays and personal statements, interviews, and timelines that reduce last-minute chaos.",
+      "Comprehensive support across domestic and international applications—from positioning and essays to interview preparation and disciplined timelines—so your process stays clear, focused, and free of last-minute stress.",
   },
   {
     icon: "Compass",
     title: "Career and pathway design",
     description:
-      "Clarify direction before you commit: strengths mapping, course and major fit, and a roadmap that connects school choices to long-term career goals.",
+      " Clarify your direction before you commit. We map your strengths, identify best-fit courses and majors, and design a considered roadmap that aligns your university choices with long-term career outcomes. ",
   },
   {
     icon: "Wallet",
@@ -69,7 +69,7 @@ export const SERVICES: readonly Service[] = [
     icon: "Lightbulb",
     title: "Academic coaching & skills",
     description:
-      "Targeted tutoring and study systems that build confidence—whether you are raising grades or preparing for standardised tests.",
+      "At Aristotle we provide targeted tutoring and structured study systems that build confidence with academic consistency, whether for improving grades or preparing for standardised tests through focused practice reviews and continuous support.  Curated extracurricular guidance designed to shape depth, leadership, and sustained impact beyond academic performance.",
   },
   {
     icon: "Handshake",
@@ -128,14 +128,14 @@ export const TESTIMONIALS: readonly Testimonial[] = [
 ];
 
 export const CONTACT_INFO: ContactInfo = {
-  email: "info@aristotleascent.edu",
-  phone: "+1 (800) 000-0000",
+  email: "aristotleascent.info@gmail.com",
+  phone: "+971-524716969",
   address: "123 Scholar Avenue, Education City",
   hours: "Mon–Sat: 8:00 AM – 7:00 PM",
   socials: [
-    { platform: "Instagram", url: "#" },
+    // { platform: "Instagram", url: "#" },
     { platform: "LinkedIn", url: "#" },
-    { platform: "Facebook", url: "#" },
+    // { platform: "Facebook", url: "#" },
     { platform: "YouTube", url: "#" },
   ],
 };
@@ -172,8 +172,8 @@ export const HERO = {
   titleBefore: "Clarity for your",
   titleAccent: "next chapter",
   titleAfter: "in higher education",
-  sub:
-    "Strategy-led counselling for students and families navigating competitive admissions, global options, and high-stakes decisions—without the one-size-fits-all playbook.",
+  p1: " In today's world with a complex and uncertain landscape, Aristotle Ascent offers disciplined thinking, clear direction, and decisions grounded in evidence.Strategy-led counselling for students and families navigating competitive admissions, global options, and high-stakes decisions—without the one-size-fits-all playbook.",
+  p2: "We go beyond admissions—shaping your trajectory through present insight and future-focused guidance, so you are prepared for what lies ahead. ",
   primaryCta: "Plan a conversation",
   secondaryCta: "View services",
 } as const;
@@ -182,8 +182,8 @@ export const ABOUT = {
   label: "The studio",
   headlineBefore: "Thoughtful guidance,",
   headlineAccent: "built around you",
-  p1: "Aristotle Ascent takes its name from a tradition of rigorous inquiry—but our work is deeply practical. We help you interpret options, manage risk, and move forward with evidence and care.",
-  p2: "Every engagement blends structure with room to breathe: clear deliverables, honest feedback, and space to refine your narrative until it sounds like you—not a template.",
+  p1: "Aristotle Ascent takes its name from a tradition of rigorous inquiry—but our work is firmly practical. We guide students and families through complex higher education decisions, helping you evaluate options, manage risk, and move forward with clarity and evidence.",
+  p2: "Every engagement balances structure with flexibility: clear milestones, candid feedback, and dedicated support to shape thoughtful, authentic applications that reflect you—not a template.",
   quote:
     "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
   quoteAttr: "Aristotle",

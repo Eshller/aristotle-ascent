@@ -35,7 +35,7 @@ export function MobileMenu() {
           <SheetTitle className="font-heading text-xl font-medium text-foreground">
             {SITE_NAME}
           </SheetTitle>
-          <p className="mt-2 text-[11px] font-light uppercase tracking-[0.2em] text-[#6B8599]">
+          <p className="mt-2 text-[13px] font-medium uppercase tracking-[0.2em] text-[#6B8599]">
             {SITE_TAGLINE}
           </p>
         </SheetHeader>
@@ -45,7 +45,7 @@ export function MobileMenu() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="border-b border-[#D4EAFA]/80 py-4 text-[12px] font-medium uppercase tracking-[0.18em] text-[#2A3A4A] transition-colors hover:text-[#4B9CC0]"
+              className="border-b border-[#D4EAFA]/80 py-4 text-[16px] font-medium uppercase tracking-[0.18em] text-[#2A3A4A] transition-colors hover:text-[#4B9CC0]"
             >
               {link.label}
             </a>
@@ -55,7 +55,7 @@ export function MobileMenu() {
             onClick={() => setOpen(false)}
             className={cn(
               buttonVariants(),
-              "mt-8 rounded-full border border-[#7BC4E2]/70 bg-white py-3 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[#1E5F8A] hover:bg-[#EBF6FC]"
+              "mt-8 rounded-full border border-[#7BC4E2]/70 bg-white py-3 text-center text-[13px] font-bold uppercase tracking-[0.16em] text-[#1E5F8A] hover:bg-[#EBF6FC]"
             )}
           >
             Book a Session

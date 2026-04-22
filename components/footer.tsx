@@ -55,7 +55,7 @@ export function Footer() {
               <span className="block font-heading text-[18px] font-bold tracking-tight transition group-hover:text-[#A8D8EF]">
                 {SITE_NAME}
               </span>
-              <span className="mt-1 block text-[10px] font-light uppercase tracking-[0.2em] text-[#A8D8EF]">
+              <span className="mt-1 block text-[16px] font-medium uppercase tracking-[0.2em] text-[#A8D8EF]">
                 {SITE_TAGLINE}
               </span>
               <p className="mt-4 text-[16px] leading-[1.8] text-white/55">
@@ -68,7 +68,7 @@ export function Footer() {
 
         <div className="grid gap-12 py-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <h3 className="text-[11px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
+            <h3 className="text-[13px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
               Services
             </h3>
             <ul className="mt-5 space-y-2.5">
@@ -83,7 +83,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
+            <h3 className="text-[13px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
               Company
             </h3>
             <ul className="mt-5 space-y-2.5">
@@ -98,7 +98,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
+            <h3 className="text-[13px] font-bold uppercase tracking-[0.26em] text-[#EDD97A]">
               Follow Us
             </h3>
             <ul className="mt-5 space-y-2.5">
@@ -128,10 +128,10 @@ export function Footer() {
         <Separator className="my-2 bg-white/10" />
 
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
-          <p className="text-[11px] text-white/40">
+          <p className="text-[13px] text-white/40">
             &copy; {currentYear} {SITE_NAME} Education Counselling &amp; Consulting. All rights reserved.
           </p>
-          <p className="text-[11px] text-white/30">Privacy Policy · Terms of Service</p>
+          <p className="text-[13px] text-white/30">Privacy Policy · Terms of Service</p>
         </div>
       </div>
     </footer>

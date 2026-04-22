@@ -107,6 +107,9 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "kern" 1, "liga" 1;
+    font-size: clamp(16px, 0.95rem + 0.2vw, 18px);
+    line-height: 1.6;
+    font-weight: 400;
   }
   html {
     @apply scroll-smooth;
@@ -117,7 +120,9 @@
     font-family: var(--font-heading);
   }
   p {
-    font-family: var(--font-handwriting);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    line-height: 1.7;
   }
 }
 

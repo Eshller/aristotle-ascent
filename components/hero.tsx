@@ -17,7 +17,7 @@ export function Hero() {
 
       <div className="relative mx-auto grid min-h-[min(88svh,52rem)] max-w-[1200px] items-center gap-12 px-6 pb-14 pt-28 md:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-[60px] lg:pb-20 lg:pt-32">
         <div className="animate-fade-in-up">
-          <p className="mb-6 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.34em] text-[#4B9CC0]">
+          <p className="mb-6 inline-flex items-center gap-3 text-[13px] font-bold uppercase tracking-[0.34em] text-[#4B9CC0]">
             <span className="h-[2px] w-8 bg-[#7BC4E2]" aria-hidden="true" />
             {HERO.eyebrow}
           </p>
@@ -27,14 +27,15 @@ export function Hero() {
             <br />
             <span className="text-[#1E5F8A]">{HERO.titleAfter}</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-[1.16rem] leading-[1.8] text-[#6B8599]">
-            {HERO.sub}
-          </p>
+          <div className="mt-8 max-w-2xl space-y-4 text-[1.16rem] leading-[1.8] text-[#6B8599]">
+            <p>{HERO.p1}</p>
+            <p>{HERO.p2}</p>
+          </div>
           <div className="mt-11 flex flex-wrap gap-3">
             <LinkButton
               href={SECTION.contact}
               size="lg"
-              className="rounded-full bg-[#7BC4E2] px-8 py-3 text-[12px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_4px_18px_rgba(123,196,226,0.45)] transition hover:-translate-y-0.5 hover:bg-[#4B9CC0]"
+              className="rounded-full bg-[#7BC4E2] px-8 py-3 text-[16px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_4px_18px_rgba(123,196,226,0.45)] transition hover:-translate-y-0.5 hover:bg-[#4B9CC0]"
             >
               Start Your Journey
             </LinkButton>
@@ -42,7 +43,7 @@ export function Hero() {
               href={SECTION.services}
               variant="outline"
               size="lg"
-              className="rounded-full border-2 border-[#7BC4E2] bg-white px-8 py-3 text-[12px] font-bold uppercase tracking-[0.18em] text-[#4B9CC0] transition hover:-translate-y-0.5 hover:bg-[#A8D8EF]/30"
+              className="rounded-full border-2 border-[#7BC4E2] bg-white px-8 py-3 text-[16px] font-bold uppercase tracking-[0.18em] text-[#4B9CC0] transition hover:-translate-y-0.5 hover:bg-[#A8D8EF]/30"
             >
               Explore Services
             </LinkButton>
@@ -65,7 +66,7 @@ export function Hero() {
               <br />
               <strong className="font-semibold text-[#4B9CC0]">Academic Excellence</strong>
             </p>
-            <p className="mt-5 text-center text-[11px] uppercase tracking-[0.24em] text-[#6B8599]/80">
+            <p className="mt-5 text-center text-[13px] uppercase tracking-[0.24em] text-[#6B8599]/80">
               Calm guidance, thoughtful outcomes
             </p>
           </div>

@@ -36,7 +36,7 @@ export function NotebookLeftPage() {
 
         <div className="space-y-6">
           <div className="notebook-line">
-            <p className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+            <p className="text-sm font-semibold uppercase tracking-wider text-stone-500">
               Email
             </p>
             <a
@@ -48,7 +48,7 @@ export function NotebookLeftPage() {
           </div>
 
           <div className="notebook-line">
-            <p className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+            <p className="text-sm font-semibold uppercase tracking-wider text-stone-500">
               Phone
             </p>
             <a
@@ -60,14 +60,14 @@ export function NotebookLeftPage() {
           </div>
 
           <div className="notebook-line">
-            <p className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+            <p className="text-sm font-semibold uppercase tracking-wider text-stone-500">
               Studio
             </p>
             <p className="mt-1 text-lg font-medium text-navy-950">{CONTACT_INFO.address}</p>
           </div>
 
           <div className="notebook-line">
-            <p className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+            <p className="text-sm font-semibold uppercase tracking-wider text-stone-500">
               Hours
             </p>
             <p className="mt-1 text-lg font-medium text-navy-950">{CONTACT_INFO.hours}</p>
@@ -81,7 +81,7 @@ export function NotebookLeftPage() {
         </div>
 
         <div className="notebook-line">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-stone-500">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-stone-500">
             Social
           </p>
           <div className="flex flex-wrap gap-3">

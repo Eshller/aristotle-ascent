@@ -6,7 +6,7 @@ export function About() {
     <SectionWrapper id="about" className="bg-[#F7FBFF]">
       <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div className="animate-fade-in-up">
-          <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-[#4B9CC0]">
+          <p className="text-[13px] font-bold uppercase tracking-[0.34em] text-[#4B9CC0]">
             {ABOUT.label}
           </p>
           <h2 className="mt-4 font-heading text-[2.1rem] font-bold leading-[1.12] tracking-tight text-[#1E5F8A] sm:text-4xl lg:text-[3rem]">
@@ -29,7 +29,7 @@ export function About() {
               <p className="font-handwriting text-[27px] italic leading-[1.62] text-[#2A3A4A]">
                 {ABOUT.quote}
               </p>
-              <figcaption className="mt-6 text-[12px] font-bold uppercase tracking-[0.22em] text-[#4B9CC0]">
+              <figcaption className="mt-6 text-[16px] font-bold uppercase tracking-[0.22em] text-[#4B9CC0]">
                 — {ABOUT.quoteAttr}
               </figcaption>
             </blockquote>

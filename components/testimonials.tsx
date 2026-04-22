@@ -6,7 +6,7 @@ export function Testimonials() {
     <section id="testimonials" className="bg-[linear-gradient(135deg,#1E5F8A_0%,#1A4A70_100%)] px-6 py-24 md:px-10 lg:px-[60px] lg:py-[120px]">
       <div className="mx-auto max-w-[1200px]">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-[#EDD97A]">
+        <p className="text-[13px] font-bold uppercase tracking-[0.34em] text-[#EDD97A]">
           Outcomes
         </p>
         <h2 className="mt-4 font-heading text-[2.2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
@@ -23,7 +23,7 @@ export function Testimonials() {
             key={testimonial.name}
             className="rounded-2xl border border-[#7BC4E2]/35 bg-white/8 p-8 transition hover:bg-white/12"
           >
-            <p className="mb-4 text-[14px] tracking-[2px] text-[#EDD97A]" aria-hidden="true">
+            <p className="mb-4 text-[16px] tracking-[2px] text-[#EDD97A]" aria-hidden="true">
               ★★★★★
             </p>
             <blockquote>
@@ -32,8 +32,8 @@ export function Testimonials() {
               </p>
             </blockquote>
             <figcaption className="mt-6 border-t border-white/15 pt-5">
-              <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#EDD97A]">{testimonial.name}</p>
-              <p className="mt-1 text-[12px] leading-relaxed text-white/45">
+              <p className="text-[16px] font-bold uppercase tracking-[0.2em] text-[#EDD97A]">{testimonial.name}</p>
+              <p className="mt-1 text-[16px] leading-relaxed text-white/45">
                 {testimonial.credential}
               </p>
             </figcaption>
