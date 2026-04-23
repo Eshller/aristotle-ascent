@@ -51,23 +51,23 @@ export function Hero() {
         </div>
 
         <div className="animate-fade-in animation-delay-200">
-          <div className="mx-auto max-w-[390px] rounded-3xl border border-[#D4EAFA] bg-white/92 p-7 shadow-[0_16px_42px_rgba(123,196,226,0.14)]">
-            <div className="relative mx-auto h-52 w-52 overflow-hidden rounded-2xl">
+          <div className="mx-auto max-w-[390px] rounded-3xl border border-[#D4EAFA] bg-white/92 p-6 shadow-[0_16px_42px_rgba(123,196,226,0.14)]">
+            <div className="relative mx-auto h-68 w-68 overflow-hidden rounded-2xl m-0 p-0">
               <Image
                 src="/Aristotle Logo.jpg"
                 alt="Aristotle Ascent logo"
                 fill
-                sizes="208px"
-                className="object-contain"
+                sizes="272px"
+                className="object-contain m-0 p-0"
                 style={{ filter: "contrast(1.08) saturate(1.05)" }}
               />
             </div>
-            <p className="mt-3 text-center text-[20px] leading-normal text-[#6B8599]">
+            <p className="text-center text-[20px] leading-normal text-[#6B8599]">
               Guiding you toward
               <br />
               <strong className="font-semibold text-[#4B9CC0]">Academic Excellence</strong>
             </p>
-            <p className="mt-2 text-center text-[13px] uppercase tracking-[0.2em] text-[#6B8599]/80">
+            <p className="mt-1 text-center text-[13px] uppercase tracking-[0.2em] text-[#6B8599]/80">
               Calm guidance, thoughtful outcomes
             </p>
           </div>
