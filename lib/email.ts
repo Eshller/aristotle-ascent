@@ -65,7 +65,7 @@ function inquiryInbox(): string {
   return (
     process.env.CONTACT_EMAIL?.trim() ??
     process.env.SMTP_USER?.trim() ??
-    "contact@aristotleascent.com"
+    "aristotleascent.info@gmail.com"
   );
 }
 

@@ -20,16 +20,16 @@ export function About() {
         </div>
 
         <div className="animate-fade-in">
-          <figure className="relative overflow-hidden rounded-[24px] border border-[#D4EAFA] bg-white px-8 py-10 shadow-[0_12px_36px_rgba(123,196,226,0.12)] sm:px-10 sm:py-12">
+          <figure className="relative overflow-hidden rounded-[24px] border border-[#D4EAFA] bg-white px-7 py-6 shadow-[0_12px_36px_rgba(123,196,226,0.12)] sm:px-9 sm:py-8">
             <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#A8D8EF]/35 blur-2xl" />
-            <span className="mb-3 block font-heading text-[96px] leading-[0.6] text-[#A8D8EF]" aria-hidden="true">
+            <span className="mb-0 block font-heading text-[82px] leading-[0.56] text-[#A8D8EF]" aria-hidden="true">
               &ldquo;
             </span>
             <blockquote className="relative">
-              <p className="font-handwriting text-[27px] italic leading-[1.62] text-[#2A3A4A]">
+              <p className="font-handwriting text-[27px] italic leading-[1.42] text-[#2A3A4A]">
                 {ABOUT.quote}
               </p>
-              <figcaption className="mt-6 text-[16px] font-bold uppercase tracking-[0.22em] text-[#4B9CC0]">
+              <figcaption className="mt-1 text-[16px] font-bold uppercase tracking-[0.16em] text-[#4B9CC0]">
                 — {ABOUT.quoteAttr}
               </figcaption>
             </blockquote>

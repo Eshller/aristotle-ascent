@@ -33,10 +33,10 @@ export function Navbar() {
             />
           </div>
           <div className="min-w-0 leading-tight">
-            <span className="block truncate font-heading text-[18px] font-bold tracking-tight text-navy-900">
+            <span className="block truncate font-heading text-[16px] font-extrabold tracking-tight text-navy-900">
               {SITE_NAME}
             </span>
-            <span className="hidden truncate text-[16px] font-medium uppercase tracking-[0.22em] text-muted-foreground md:block">
+            <span className="hidden truncate text-[12px] font-bold uppercase tracking-[0.18em] text-muted-foreground md:block">
               {SITE_TAGLINE}
             </span>
           </div>
@@ -47,7 +47,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[13px] font-medium uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:text-navy-700"
+                className="text-[12px] font-bold uppercase tracking-[0.18em] text-foreground/85 transition-colors hover:text-navy-700"
               >
                 {link.label}
               </a>
