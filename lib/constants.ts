@@ -188,3 +188,12 @@ export const ABOUT = {
     "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
   quoteAttr: "Aristotle",
 } as const;
+
+/** Exclusivity / cohort cap — used to set expectations site-wide */
+export const EXCLUSIVITY = {
+  badge: "Limited intake · 10–15 students per year",
+  headline: "An intentionally small studio",
+  body:
+    "To protect the quality of our work, Aristotle Ascent partners with only 10 to 15 students each year. This keeps every engagement personal, deeply researched, and guided by senior attention from start to offer.",
+  cta: "Request a place in this year's cohort",
+} as const;

@@ -1,5 +1,5 @@
 import { LinkButton } from "./link-button";
-import { HERO, SECTION } from "@/lib/constants";
+import { HERO, SECTION, EXCLUSIVITY } from "@/lib/constants";
 import Image from "next/image";
 
 export function Hero() {
@@ -48,6 +48,14 @@ export function Hero() {
               Explore Services
             </LinkButton>
           </div>
+
+          <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#EDD97A]/60 bg-[#FDFAF2] px-4 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[#1E5F8A]">
+            <span
+              className="inline-block h-1.5 w-1.5 rounded-full bg-[#C9A840]"
+              aria-hidden="true"
+            />
+            {EXCLUSIVITY.badge}
+          </p>
         </div>
 
         <div className="animate-fade-in animation-delay-200">
