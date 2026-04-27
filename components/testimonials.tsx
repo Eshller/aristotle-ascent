@@ -32,7 +32,9 @@ export function Testimonials() {
               </p>
             </blockquote>
             <figcaption className="mt-6 border-t border-white/15 pt-5">
-              <p className="text-[16px] font-bold uppercase tracking-[0.2em] text-[#EDD97A]">{testimonial.name}</p>
+              <p className="text-[16px] font-bold uppercase tracking-[0.2em] text-[#EDD97A] blur-[5px] select-none">
+                {testimonial.name}
+              </p>
               <p className="mt-1 text-[16px] leading-relaxed text-white/45">
                 {testimonial.credential}
               </p>

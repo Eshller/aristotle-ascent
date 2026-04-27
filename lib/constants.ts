@@ -168,7 +168,7 @@ export const FOOTER_COMPANY_LINKS: readonly NavLink[] = [
 
 /** Hero marketing lines (kept in constants for a single source of truth) */
 export const HERO = {
-  eyebrow: "Independent education studio",
+  eyebrow: "Exclusive Higher Education Guidance Studio",
   titleBefore: "Clarity for your",
   titleAccent: "next chapter",
   titleAfter: "in higher education",

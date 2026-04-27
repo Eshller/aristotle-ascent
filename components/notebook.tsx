@@ -132,8 +132,8 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
               </div>
 
               {/* Cover content */}
-              <div className="relative flex h-full flex-col items-center justify-center px-8">
-                <div className="rounded-sm border border-gold-500/30 p-8 sm:p-12">
+              <div className="relative flex h-full flex-col items-center px-8 pt-14">
+                <div className="rounded-sm border border-gold-500/30 p-6 sm:p-8">
                   <div className="mb-4 flex items-center justify-center gap-3">
                     <div className="h-px w-12 bg-gold-500/40" />
                     <div className="h-2 w-2 rotate-45 bg-gold-500/50" />
@@ -141,7 +141,7 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
                   </div>
 
                   <h3 className="font-heading text-3xl font-semibold tracking-tight text-gold-400 sm:text-4xl">
-                    Open the journal
+                    Book your slot
                   </h3>
 
                   <div className="mt-5 flex items-center justify-center gap-3">
@@ -151,13 +151,13 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
                   </div>
                 </div>
 
-                <div className="relative mt-8 h-12 w-12 overflow-hidden rounded-full border border-gold-500/25 bg-white/90">
+                <div className="relative mt-16 h-32 w-32 overflow-hidden rounded-2xl border border-gold-500/25 bg-white/95 p-2">
                   <Image
                     src="/Aristotle Logo.jpg"
                     alt="Aristotle Ascent logo"
                     fill
-                    sizes="48px"
-                    className="object-cover"
+                    sizes="128px"
+                    className="object-contain p-1"
                   />
                 </div>
               </div>
