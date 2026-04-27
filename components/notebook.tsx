@@ -141,7 +141,7 @@ export function Notebook({ leftPage, rightPage, isOpen }: NotebookProps) {
                   </div>
 
                   <h3 className="font-heading text-3xl font-semibold tracking-tight text-gold-400 sm:text-4xl">
-                    Book your slot
+                    Book your session
                   </h3>
 
                   <div className="mt-5 flex items-center justify-center gap-3">
