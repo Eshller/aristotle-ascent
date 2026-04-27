@@ -129,7 +129,8 @@ export function Footer() {
 
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
           <p className="text-[13px] text-white/40">
-            &copy; {currentYear} {SITE_NAME} Education Counselling &amp; Consulting. All rights reserved.
+            &copy; {currentYear} {SITE_NAME} Education Counselling &amp; Consulting · Ascent
+            Aristotle FZ-LLC. All rights reserved.
           </p>
           <p className="text-[13px] text-white/30">Privacy Policy · Terms of Service</p>
         </div>

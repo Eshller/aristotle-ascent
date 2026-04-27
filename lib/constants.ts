@@ -77,6 +77,12 @@ export const SERVICES: readonly Service[] = [
     description:
       "Structured conversations for parents and guardians: expectations, communication, and how to support the student without adding pressure.",
   },
+  {
+    icon: "Compass",
+    title: "Planning a Gap Year",
+    description:
+      "Structured gap-year planning that balances exploration with outcomes: timeline design, skill-building pathways, internships or projects, and a clear re-entry strategy for stronger applications.",
+  },
 ];
 
 export const PROCESS_STEPS: readonly ProcessStep[] = [
@@ -130,8 +136,9 @@ export const TESTIMONIALS: readonly Testimonial[] = [
 export const CONTACT_INFO: ContactInfo = {
   email: "aristotleascent.info@gmail.com",
   phone: "+971-524716969",
-  address: "123 Scholar Avenue, Education City",
-  hours: "Mon–Sat: 8:00 AM – 7:00 PM",
+  address:
+    "1035 Compass Building - Al Hulaila, Al Hulaila Industrial Zone-FZ, Ras Al Khaimah, United Arab Emirates",
+  hours: "Thu & Fri: 6:00 PM - 9:00 PM | Sat: 10:00 AM - 4:00 PM",
   socials: [
     // { platform: "Instagram", url: "#" },
     { platform: "LinkedIn", url: "#" },
@@ -148,6 +155,7 @@ export const PROGRAM_OPTIONS = [
   "International study planning",
   "Academic coaching & skills",
   "Family guidance sessions",
+  "Planning a Gap Year",
 ] as const;
 
 export const FOOTER_SERVICE_LINKS: readonly { label: string; href: string }[] = [
@@ -191,7 +199,8 @@ export const ABOUT = {
 
 /** Exclusivity / cohort cap — used to set expectations site-wide */
 export const EXCLUSIVITY = {
-  badge: "Limited intake · 10–15 students per year",
+  badge:
+    "Secure your place today — our limited intake policy each academic year allows us to deliver dedicated attention and a truly personalized learning experience",
   headline: "An intentionally small studio",
   body:
     "To protect the quality of our work, Aristotle Ascent partners with only 10 to 15 students each year. This keeps every engagement personal, deeply researched, and guided by senior attention from start to offer.",

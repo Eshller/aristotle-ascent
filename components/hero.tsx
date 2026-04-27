@@ -48,17 +48,9 @@ export function Hero() {
               Explore Services
             </LinkButton>
           </div>
-
-          <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#EDD97A]/60 bg-[#FDFAF2] px-4 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[#1E5F8A]">
-            <span
-              className="inline-block h-1.5 w-1.5 rounded-full bg-[#C9A840]"
-              aria-hidden="true"
-            />
-            {EXCLUSIVITY.badge}
-          </p>
         </div>
 
-        <div className="animate-fade-in animation-delay-200">
+        <div className="animate-fade-in animation-delay-200 self-start pt-2 lg:pt-0 lg:-mt-2">
           <div className="mx-auto max-w-[390px] rounded-3xl border border-[#D4EAFA] bg-white/92 p-6 shadow-[0_16px_42px_rgba(123,196,226,0.14)]">
             <div className="relative mx-auto h-68 w-68 overflow-hidden rounded-2xl m-0 p-0">
               <Image
@@ -78,6 +70,16 @@ export function Hero() {
             <p className="mt-1 text-center text-[13px] uppercase tracking-[0.2em] text-[#6B8599]/80">
               Calm guidance, thoughtful outcomes
             </p>
+          </div>
+          <div className="mt-5 flex justify-center">
+            <div className="w-full max-w-[430px] rounded-2xl border border-[#EDD97A]/60 bg-[#FDFAF2] px-5 py-4 text-center shadow-[0_10px_28px_rgba(201,168,64,0.08)]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#C9A840]">
+                Limited Intake
+              </p>
+              <p className="mt-2 text-[15px] font-medium leading-[1.55] text-[#1E5F8A]">
+                {EXCLUSIVITY.badge}
+              </p>
+            </div>
           </div>
         </div>
       </div>
