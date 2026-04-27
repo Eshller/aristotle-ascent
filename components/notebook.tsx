@@ -191,6 +191,7 @@ export function NotebookWithScroll({
 }: Omit<NotebookProps, "isOpen">) {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -210,6 +211,21 @@ export function NotebookWithScroll({
   }, []);
 
   useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const onChange = (event: MediaQueryListEvent) => setIsMobile(event.matches);
+    setIsMobile(media.matches);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      setIsOpen(true);
+    }
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (isMobile) return;
     if (isVisible && !isOpen) {
       timerRef.current = setTimeout(() => setIsOpen(true), 3000);
     }
@@ -225,6 +241,23 @@ export function NotebookWithScroll({
   const handleClose = useCallback(() => {
     setIsOpen(false);
   }, []);
+
+  if (isMobile) {
+    return (
+      <NotebookContext.Provider value={{ onClose: handleClose }}>
+        <div className="mx-auto w-full max-w-[760px] space-y-4">
+          <div className="relative overflow-hidden rounded-2xl border border-[#D4EAFA] bg-stone-100">
+            <RuledPageBackground />
+            <div className="relative z-10 p-5 sm:p-6">{leftPage}</div>
+          </div>
+          <div className="relative overflow-hidden rounded-2xl border border-[#D4EAFA] bg-stone-100">
+            <RuledPageBackground />
+            <div className="relative z-10 p-5 sm:p-6">{rightPage}</div>
+          </div>
+        </div>
+      </NotebookContext.Provider>
+    );
+  }
 
   return (
     <div ref={containerRef}>

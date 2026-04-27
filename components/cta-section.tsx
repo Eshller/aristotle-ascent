@@ -18,7 +18,7 @@ export function CTASection() {
           <LinkButton
             href={SECTION.contact}
             size="lg"
-            className="inline-flex gap-2 rounded-full bg-[#7BC4E2] px-9 py-3 text-[16px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_4px_18px_rgba(123,196,226,0.45)] transition hover:-translate-y-0.5 hover:bg-[#4B9CC0]"
+            className="inline-flex h-auto min-h-12 w-full max-w-[420px] items-center justify-center gap-2 rounded-full bg-[#7BC4E2] px-6 py-3 text-center text-[14px] font-bold uppercase leading-tight tracking-[0.12em] whitespace-normal text-white shadow-[0_4px_18px_rgba(123,196,226,0.45)] transition hover:-translate-y-0.5 hover:bg-[#4B9CC0] sm:w-auto sm:px-9 sm:text-[16px] sm:tracking-[0.18em]"
           >
             Book a Free Consultation
             <ArrowRight className="h-4 w-4" />
