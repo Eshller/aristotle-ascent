@@ -12,7 +12,7 @@ export function CTASection() {
         </h2>
         <p className="mx-auto mt-6 max-w-[620px] text-[22px] leading-[1.75] text-[#6B8599]">
           Book your free discovery session and take the first step toward the academic future you
-          deserve. Every great journey begins with a single decision.
+          deserve. Every considered journey begins with a single, well-informed decision.
         </p>
         <div className="mt-10">
           <LinkButton

@@ -19,7 +19,7 @@ export function ContactForm() {
             Let&apos;s Start a <span className="italic text-[#C9A840]">Conversation</span>
           </h2>
           <p className="mt-6 text-[20px] leading-[1.8] text-[#6B8599]">
-            Open the contact journal and share your goals. We&apos;ll respond with a clear
+          Fill in the form below and share your goals. We will respond with a clear
             roadmap for your next step.
           </p>
         </div>
