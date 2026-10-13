@@ -184,7 +184,7 @@ export const HERO = {
   titleBefore: "Clarity for your",
   titleAccent: "next chapter",
   titleAfter: "in higher education",
-  p1: " In today's world with a complex and uncertain landscape, Aristotle Ascent offers disciplined thinking, clear direction, and decisions grounded in evidence.Strategy-led counselling for students and families navigating competitive admissions, global options, and high-stakes decisions—without the one-size-fits-all playbook.",
+  p1: "In today's world with a complex and uncertain landscape, Aristotle Ascent offers disciplined thinking, clear direction, and decisions grounded in evidence. Strategy-led counselling for students and families navigating competitive admissions, global options, and high-stakes decisions—without the one-size-fits-all playbook.",
   p2: "We go beyond admissions—shaping your trajectory through present insight and future-focused guidance, so you are prepared for what lies ahead. ",
   primaryCta: "Plan a conversation",
   secondaryCta: "View services",
