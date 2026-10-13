@@ -203,6 +203,6 @@ export const EXCLUSIVITY = {
     "Secure your place today — our limited intake policy each academic year allows us to deliver dedicated attention and a truly personalised learning experience.",
   headline: "An intentionally small studio",
   body:
-    "To protect the quality of our work, Aristotle Ascent partners with only 10 to 15 students each year. This keeps every engagement personal, deeply researched, and guided by senior attention from start to offer.",
+    "To protect the quality of our work, Aristotle Ascent works with a limited intake each year. This keeps every engagement personal, deeply researched, and guided by senior attention from start to offer.",
   cta: "Request a place in this year's cohort",
 } as const;

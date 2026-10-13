@@ -66,12 +66,6 @@ export function NotebookLeftPage() {
             <p className="mt-1 text-lg font-medium text-navy-950">{CONTACT_INFO.address}</p>
           </div>
 
-          <div className="notebook-line">
-            <p className="text-sm font-semibold uppercase tracking-wider text-stone-500">
-              Hours
-            </p>
-            <p className="mt-1 text-lg font-medium text-navy-950">{CONTACT_INFO.hours}</p>
-          </div>
         </div>
 
         <div className="my-6 flex items-center gap-2">
