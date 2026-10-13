@@ -20,8 +20,8 @@ export default function BlogPage() {
         Field notes &amp; guides
       </h1>
       <p className="mt-4 leading-relaxed text-muted-foreground">
-        We&apos;re drafting practical articles on applications, scholarships, and moving abroad—
-        written for students and families, not algorithms. Subscribe to the newsletter when it
+        We&apos;re drafting practical articles on applications, scholarships, and moving
+        abroad—written for students and families, not algorithms. Subscribe to the newsletter when it
         launches, or reach out if you need help now.
       </p>
       <Link

@@ -87,9 +87,10 @@ const jsonLd = {
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Scholar Avenue",
-    addressLocality: "Education City",
-    addressCountry: "US",
+    streetAddress: "1035 Compass Building, Al Hulaila Industrial Zone-FZ",
+    addressLocality: "Al Hulaila",
+    addressRegion: "Ras Al Khaimah",
+    addressCountry: "AE",
   },
 };
 

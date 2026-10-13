@@ -30,7 +30,7 @@ export function NotebookForm() {
       <div className="flex h-full flex-col items-center justify-center py-16 text-center text-stone-800">
         <h3 className="font-heading text-3xl font-semibold text-gold-600">Received</h3>
         <p className="mt-3 text-base text-stone-600">
-          We&apos;ll reply within one business day.
+          We&apos;ll reply within 24 hours.
         </p>
       </div>
     );

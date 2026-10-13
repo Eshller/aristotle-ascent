@@ -11,7 +11,7 @@ export const SITE_NAME = "Aristotle Ascent";
 export const SITE_TAGLINE = "Higher-education guidance studio";
 export const SITE_DESCRIPTION =
   "Independent counselling for ambitious students and families—clear strategy for applications, funding, and global study, with human support at every step.";
-export const SITE_URL = process.env.SITE_URL ?? "https://aristotleascent.com";
+export const SITE_URL = process.env.SITE_URL ?? "https://www.aristotleascent.ae";
 
 export const SECTION = {
   home: "/#home",
@@ -51,7 +51,7 @@ export const SERVICES: readonly Service[] = [
     icon: "Compass",
     title: "Career and pathway design",
     description:
-      " Clarify your direction before you commit. We map your strengths, identify best-fit courses and majors, and design a considered roadmap that aligns your university choices with long-term career outcomes. ",
+      "Clarify your direction before you commit. We map your strengths, identify best-fit courses and majors, and design a considered roadmap that aligns your university choices with long-term career outcomes.",
   },
   {
     icon: "Wallet",
@@ -69,7 +69,7 @@ export const SERVICES: readonly Service[] = [
     icon: "Lightbulb",
     title: "Academic coaching & skills",
     description:
-      "At Aristotle, we provide targeted tutoring and structured study systems that build confidence with academic consistency, whether for improving grades or preparing for standardised tests through focused practice reviews and continuous support.  Curated extracurricular guidance designed to shape depth, leadership, and sustained impact beyond academic performance.",
+      "Targeted tutoring and structured study systems that build confidence and academic consistency, whether you are improving grades or preparing for standardised tests, through focused practice, regular reviews, and continuous support. We also offer curated extracurricular guidance that builds depth, leadership, and sustained impact beyond academic performance.",
   },
   {
     icon: "Handshake",
@@ -78,8 +78,8 @@ export const SERVICES: readonly Service[] = [
       "Structured conversations for parents and guardians: expectations, communication, and how to support the student without adding pressure.",
   },
   {
-    icon: "Compass",
-    title: "Gap Year Planning",
+    icon: "Plane",
+    title: "Gap year planning",
     description:
       "Structured gap-year planning that balances exploration with outcomes: timeline design, skill-building pathways, internships or projects, and a clear re-entry strategy for stronger applications.",
   },
@@ -159,7 +159,7 @@ export const PROGRAM_OPTIONS = [
   "International study planning",
   "Academic coaching & skills",
   "Family guidance sessions",
-  "Gap Year Planning",
+  "Gap year planning",
 ] as const;
 
 export const FOOTER_SERVICE_LINKS: readonly { label: string; href: string }[] = [
@@ -184,8 +184,8 @@ export const HERO = {
   titleBefore: "Clarity for your",
   titleAccent: "next chapter",
   titleAfter: "in higher education",
-  p1: "In today's world with a complex and uncertain landscape, Aristotle Ascent offers disciplined thinking, clear direction, and decisions grounded in evidence. Strategy-led counselling for students and families navigating competitive admissions, global options, and high-stakes decisions—without the one-size-fits-all playbook.",
-  p2: "We go beyond admissions—shaping your trajectory through present insight and future-focused guidance, so you are prepared for what lies ahead. ",
+  p1: "In today's complex and uncertain landscape, Aristotle Ascent offers disciplined thinking, clear direction, and decisions grounded in evidence. Strategy-led counselling for students and families navigating competitive admissions, global options, and high-stakes decisions—without the one-size-fits-all playbook.",
+  p2: "We go beyond admissions—shaping your trajectory through present insight and future-focused guidance, so you are prepared for what lies ahead.",
   primaryCta: "Plan a conversation",
   secondaryCta: "View services",
 } as const;
@@ -204,7 +204,7 @@ export const ABOUT = {
 /** Exclusivity / cohort cap — used to set expectations site-wide */
 export const EXCLUSIVITY = {
   badge:
-    "Secure your place today — our limited intake policy each academic year allows us to deliver dedicated attention and a truly personalised learning experience.",
+    "Secure your place today—our limited intake policy each academic year allows us to deliver dedicated attention and a truly personalised learning experience.",
   headline: "An intentionally small studio",
   body:
     "To protect the quality of our work, Aristotle Ascent works with a limited intake each year. This keeps every engagement personal, deeply researched, and guided by senior attention from start to offer.",

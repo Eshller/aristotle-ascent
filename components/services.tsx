@@ -7,6 +7,7 @@ import {
   Globe,
   Lightbulb,
   Handshake,
+  Plane,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -17,6 +18,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Globe,
   Lightbulb,
   Handshake,
+  Plane,
 };
 
 export function Services() {
