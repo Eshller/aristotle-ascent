@@ -13,6 +13,7 @@ import {
   InstagramIcon,
   FacebookIcon,
   YoutubeIcon,
+  WhatsAppIcon,
 } from "./social-icons";
 
 function followIcon(platform: string) {
@@ -25,6 +26,8 @@ function followIcon(platform: string) {
       return <FacebookIcon className="h-4 w-4" />;
     case "YouTube":
       return <YoutubeIcon className="h-4 w-4" />;
+    case "WhatsApp":
+      return <WhatsAppIcon className="h-4 w-4" />;
     default:
       return null;
   }
@@ -106,6 +109,8 @@ export function Footer() {
                 <li key={social.platform}>
                   <a
                     href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[#A8D8EF]"
                   >
                     <span className="text-[#A8D8EF]">{followIcon(social.platform)}</span>

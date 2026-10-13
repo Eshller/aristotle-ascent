@@ -4,6 +4,7 @@ import {
   InstagramIcon,
   FacebookIcon,
   YoutubeIcon,
+  WhatsAppIcon,
 } from "./social-icons";
 
 function socialIcon(platform: string) {
@@ -16,6 +17,8 @@ function socialIcon(platform: string) {
       return <FacebookIcon className="h-5 w-5" />;
     case "YouTube":
       return <YoutubeIcon className="h-5 w-5" />;
+    case "WhatsApp":
+      return <WhatsAppIcon className="h-5 w-5" />;
     default:
       return null;
   }
@@ -83,7 +86,9 @@ export function NotebookLeftPage() {
               <a
                 key={social.platform}
                 href={social.url}
-                aria-label={`Follow us on ${social.platform}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.platform === "WhatsApp" ? "Chat with us on WhatsApp" : `Follow us on ${social.platform}`}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gold-500/25 text-gold-600 transition-colors hover:border-gold-500/50 hover:bg-gold-500/5"
               >
                 {socialIcon(social.platform)}

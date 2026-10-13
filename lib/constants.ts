@@ -141,9 +141,13 @@ export const CONTACT_INFO: ContactInfo = {
   hours: "Thu & Fri: 6:00 PM - 9:00 PM | Sat: 10:00 AM - 4:00 PM",
   socials: [
     // { platform: "Instagram", url: "#" },
-    { platform: "LinkedIn", url: "#" },
+    { platform: "LinkedIn", url: "https://www.linkedin.com/company/aristotle-ascent" },
+    {
+      platform: "WhatsApp",
+      url: "https://wa.me/971524716969?text=Hi%20Aristotle%20Ascent%2C%20I%27d%20like%20to%20know%20more%20about%20your%20guidance%20services.",
+    },
     // { platform: "Facebook", url: "#" },
-    { platform: "YouTube", url: "#" },
+    // { platform: "YouTube", url: "#" },
   ],
 };
 
