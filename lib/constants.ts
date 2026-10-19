@@ -34,9 +34,9 @@ export const NAV_LINKS: readonly NavLink[] = [
 ];
 
 export const STATS: readonly Stat[] = [
-  { value: "500+", label: "Learners supported" },
+  { value: "100%", label: "Personalised guidance" },
   { value: "95%", label: "Strong-fit outcomes" },
-  { value: "200+", label: "Institution network" },
+  { value: "Global", label: "University reach" },
   { value: "12+", label: "Years in practice" },
 ];
 

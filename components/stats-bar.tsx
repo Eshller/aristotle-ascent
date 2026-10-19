@@ -13,7 +13,7 @@ export function StatsBar() {
               key={stat.label}
               className="rounded-2xl border border-[#D4EAFA] bg-white px-4 py-6 text-center shadow-[0_6px_22px_rgba(123,196,226,0.12)]"
             >
-              <p className="font-heading text-5xl font-bold tabular-nums tracking-tight text-[#1E5F8A]">
+              <p className="font-heading text-4xl font-bold sm:text-5xl tabular-nums tracking-tight text-[#1E5F8A]">
                 {stat.value}
               </p>
               <p className="mt-2 max-w-48 text-[13px] font-medium uppercase leading-relaxed tracking-[0.18em] text-[#6B8599]">
